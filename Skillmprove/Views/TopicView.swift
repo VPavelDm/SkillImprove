@@ -18,7 +18,7 @@ struct TopicView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .aspectRatio(1.0, contentMode: .fill)
         .background(
-            LinearGradient(colors: [.red, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
+            LinearGradient(colors: topic.card.backgroundColors, startPoint: .topLeading, endPoint: .bottomTrailing)
         )
         .cornerRadius(16)
     }

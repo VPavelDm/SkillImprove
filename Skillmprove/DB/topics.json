@@ -3,27 +3,32 @@
         {
             "title": "Swift",
             "card": {
-                "textColor": "#ffffff"
+                "textColor": "#ffffff",
+                "backgroundColors": ["0303fc", "fc0303"]
             }
         }, {
             "title": "UIKit",
             "card": {
-                "textColor": "#000000"
+                "textColor": "#000000",
+                "backgroundColors": ["0303fc", "fc0303"]
             }
         }, {
             "title": "Concurrency",
             "card": {
-                "textColor": "#ffaa11"
+                "textColor": "#ffaa11",
+                "backgroundColors": ["0303fc", "fc0303"]
             }
         }, {
             "title": "Animation",
             "card": {
-                "textColor": "#ffffff"
+                "textColor": "#ffffff",
+                "backgroundColors": ["0303fc", "fc0303"]
             }
         }, {
             "title": "SwiftUI",
             "card": {
-                "textColor": "#ffffff"
+                "textColor": "#ffffff",
+                "backgroundColors": ["ffe600", "ff00fb"]
             }
         }
     ]
