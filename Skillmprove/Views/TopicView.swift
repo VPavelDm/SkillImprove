@@ -12,12 +12,19 @@ struct TopicView: View {
     
     // MARK: - Views
     var body: some View {
-        VStack {
+        ZStack {
             title
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .aspectRatio(1.0, contentMode: .fill)
+        .background(
+            LinearGradient(colors: [.red, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
+        )
+        .cornerRadius(16)
     }
     private var title: some View {
         Text(topic.title)
-            .fontWeight(.bold)
+            .font(.system(size: 24, weight: .bold))
+            .foregroundColor(topic.card.textColor)
     }
 }

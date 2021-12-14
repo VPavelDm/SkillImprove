@@ -19,6 +19,9 @@
 		4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72AF276945300091CAD1 /* Persistence+preview.swift */; };
 		4ADB72B22769454A0091CAD1 /* topics.json in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB72B12769454A0091CAD1 /* topics.json */; };
 		4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72B3276945860091CAD1 /* readJSON.swift */; };
+		4ADB72B7276947F20091CAD1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72B6276947F20091CAD1 /* Card.swift */; };
+		4ADB72B9276949830091CAD1 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72B8276949830091CAD1 /* UIKitExtensions.swift */; };
+		4ADB72BC27694BBC0091CAD1 /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BB27694BBC0091CAD1 /* SwiftUIExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		4ADB72AF276945300091CAD1 /* Persistence+preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+preview.swift"; sourceTree = "<group>"; };
 		4ADB72B12769454A0091CAD1 /* topics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = topics.json; sourceTree = "<group>"; };
 		4ADB72B3276945860091CAD1 /* readJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readJSON.swift; sourceTree = "<group>"; };
+		4ADB72B6276947F20091CAD1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4ADB72B8276949830091CAD1 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
+		4ADB72BB27694BBC0091CAD1 /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				4ADB72AD276943C60091CAD1 /* Topic.swift */,
+				4ADB72B6276947F20091CAD1 /* Card.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -135,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				4ADB72AA276943760091CAD1 /* CoreDataExtensions.swift */,
+				4ADB72B8276949830091CAD1 /* UIKitExtensions.swift */,
+				4ADB72BB27694BBC0091CAD1 /* SwiftUIExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -225,7 +234,10 @@
 				4ADB72AE276943C60091CAD1 /* Topic.swift in Sources */,
 				4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */,
 				4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */,
+				4ADB72B7276947F20091CAD1 /* Card.swift in Sources */,
 				4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */,
+				4ADB72BC27694BBC0091CAD1 /* SwiftUIExtensions.swift in Sources */,
+				4ADB72B9276949830091CAD1 /* UIKitExtensions.swift in Sources */,
 				4ADB72A127693BC60091CAD1 /* TopicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

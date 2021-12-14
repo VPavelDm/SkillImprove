@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 // MARK: - Preview
 extension PersistenceController {
@@ -39,6 +40,10 @@ private struct ContentTO: Decodable {
 }
 private struct TopicTO: Decodable {
     var title: String
+    var card: CardTO
+}
+private struct CardTO: Decodable {
+    var textColor: String
 }
 
 // MARK: - Mapping
@@ -49,6 +54,12 @@ extension PersistenceController {
     private static func map(from object: TopicTO, in context: NSManagedObjectContext) -> Topic {
         let topic = Topic(context: context)
         topic.title = object.title
+        topic.card = map(from: object.card, in: context)
         return topic
+    }
+    private static func map(from object: CardTO, in context: NSManagedObjectContext) -> Card {
+        let card = Card(context: context)
+        card.textColor = Color(hex: object.textColor)
+        return card
     }
 }

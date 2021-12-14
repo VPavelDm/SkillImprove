@@ -1,15 +1,30 @@
 {
     "topics": [
         {
-            "title": "Swift"
+            "title": "Swift",
+            "card": {
+                "textColor": "#ffffff"
+            }
         }, {
-            "title": "UIKit"
+            "title": "UIKit",
+            "card": {
+                "textColor": "#000000"
+            }
         }, {
-            "title": "Concurrency"
+            "title": "Concurrency",
+            "card": {
+                "textColor": "#ffaa11"
+            }
         }, {
-            "title": "Animation"
+            "title": "Animation",
+            "card": {
+                "textColor": "#ffffff"
+            }
         }, {
-            "title": "SwiftUI"
+            "title": "SwiftUI",
+            "card": {
+                "textColor": "#ffffff"
+            }
         }
     ]
 }

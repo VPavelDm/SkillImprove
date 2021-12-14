@@ -13,6 +13,10 @@ extension Topic {
         get { title_! }
         set { title_ = newValue }
     }
+    var card: Card {
+        get { card_! }
+        set { card_ = newValue }
+    }
     
     // MARK: - Requests
     static func fetchRequest(_ predicate: NSPredicate) -> NSFetchRequest<Topic> {
