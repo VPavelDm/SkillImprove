@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728A276938710091CAD1 /* SkillmproveApp.swift */; };
-		4ADB728D276938710091CAD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728C276938710091CAD1 /* ContentView.swift */; };
+		4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728C276938710091CAD1 /* TopicsView.swift */; };
 		4ADB728F276938720091CAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB728E276938720091CAD1 /* Assets.xcassets */; };
 		4ADB7292276938720091CAD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB7291276938720091CAD1 /* Preview Assets.xcassets */; };
 		4ADB7294276938720091CAD1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB7293276938720091CAD1 /* Persistence.swift */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		4ADB7287276938710091CAD1 /* Skillmprove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skillmprove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADB728A276938710091CAD1 /* SkillmproveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillmproveApp.swift; sourceTree = "<group>"; };
-		4ADB728C276938710091CAD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4ADB728C276938710091CAD1 /* TopicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsView.swift; sourceTree = "<group>"; };
 		4ADB728E276938720091CAD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4ADB7291276938720091CAD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4ADB7293276938720091CAD1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -55,12 +55,10 @@
 		4ADB7289276938710091CAD1 /* Skillmprove */ = {
 			isa = PBXGroup;
 			children = (
-				4ADB728A276938710091CAD1 /* SkillmproveApp.swift */,
-				4ADB728C276938710091CAD1 /* ContentView.swift */,
-				4ADB728E276938720091CAD1 /* Assets.xcassets */,
-				4ADB7293276938720091CAD1 /* Persistence.swift */,
-				4ADB7295276938720091CAD1 /* Skillmprove.xcdatamodeld */,
+				4ADB729E27693B5C0091CAD1 /* DB */,
 				4ADB7290276938720091CAD1 /* Preview Content */,
+				4ADB729F27693B670091CAD1 /* Supporing Files */,
+				4ADB729D27693B530091CAD1 /* Views */,
 			);
 			path = Skillmprove;
 			sourceTree = "<group>";
@@ -71,6 +69,32 @@
 				4ADB7291276938720091CAD1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4ADB729D27693B530091CAD1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4ADB728C276938710091CAD1 /* TopicsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4ADB729E27693B5C0091CAD1 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				4ADB7293276938720091CAD1 /* Persistence.swift */,
+				4ADB7295276938720091CAD1 /* Skillmprove.xcdatamodeld */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		4ADB729F27693B670091CAD1 /* Supporing Files */ = {
+			isa = PBXGroup;
+			children = (
+				4ADB728A276938710091CAD1 /* SkillmproveApp.swift */,
+				4ADB728E276938720091CAD1 /* Assets.xcassets */,
+			);
+			path = "Supporing Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +169,7 @@
 			files = (
 				4ADB7297276938720091CAD1 /* Skillmprove.xcdatamodeld in Sources */,
 				4ADB7294276938720091CAD1 /* Persistence.swift in Sources */,
-				4ADB728D276938710091CAD1 /* ContentView.swift in Sources */,
+				4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */,
 				4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,7 +309,6 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +338,6 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

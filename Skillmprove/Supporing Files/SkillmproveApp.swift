@@ -13,7 +13,7 @@ struct SkillmproveApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TopicsView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
