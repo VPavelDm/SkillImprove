@@ -1,0 +1,15 @@
+{
+    "topics": [
+        {
+            "title": "Swift"
+        }, {
+            "title": "UIKit"
+        }, {
+            "title": "Concurrency"
+        }, {
+            "title": "Animation"
+        }, {
+            "title": "SwiftUI"
+        }
+    ]
+}

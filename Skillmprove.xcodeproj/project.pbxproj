@@ -14,7 +14,11 @@
 		4ADB7294276938720091CAD1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB7293276938720091CAD1 /* Persistence.swift */; };
 		4ADB7297276938720091CAD1 /* Skillmprove.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB7295276938720091CAD1 /* Skillmprove.xcdatamodeld */; };
 		4ADB72A127693BC60091CAD1 /* TopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72A027693BC60091CAD1 /* TopicView.swift */; };
-		4ADB72A627693D0A0091CAD1 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72A527693D0A0091CAD1 /* Topic.swift */; };
+		4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72AA276943760091CAD1 /* CoreDataExtensions.swift */; };
+		4ADB72AE276943C60091CAD1 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72AD276943C60091CAD1 /* Topic.swift */; };
+		4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72AF276945300091CAD1 /* Persistence+preview.swift */; };
+		4ADB72B22769454A0091CAD1 /* topics.json in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB72B12769454A0091CAD1 /* topics.json */; };
+		4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72B3276945860091CAD1 /* readJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +30,11 @@
 		4ADB7293276938720091CAD1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4ADB7296276938720091CAD1 /* Skillmprove.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skillmprove.xcdatamodel; sourceTree = "<group>"; };
 		4ADB72A027693BC60091CAD1 /* TopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicView.swift; sourceTree = "<group>"; };
-		4ADB72A527693D0A0091CAD1 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		4ADB72AA276943760091CAD1 /* CoreDataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExtensions.swift; sourceTree = "<group>"; };
+		4ADB72AD276943C60091CAD1 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		4ADB72AF276945300091CAD1 /* Persistence+preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+preview.swift"; sourceTree = "<group>"; };
+		4ADB72B12769454A0091CAD1 /* topics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = topics.json; sourceTree = "<group>"; };
+		4ADB72B3276945860091CAD1 /* readJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,7 @@
 		4ADB7289276938710091CAD1 /* Skillmprove */ = {
 			isa = PBXGroup;
 			children = (
+				4ADB72A82769436B0091CAD1 /* Core */,
 				4ADB729E27693B5C0091CAD1 /* DB */,
 				4ADB72A427693CFF0091CAD1 /* Models */,
 				4ADB7290276938720091CAD1 /* Preview Content */,
@@ -90,6 +99,8 @@
 			children = (
 				4ADB7293276938720091CAD1 /* Persistence.swift */,
 				4ADB7295276938720091CAD1 /* Skillmprove.xcdatamodeld */,
+				4ADB72AF276945300091CAD1 /* Persistence+preview.swift */,
+				4ADB72B12769454A0091CAD1 /* topics.json */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -106,9 +117,34 @@
 		4ADB72A427693CFF0091CAD1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4ADB72A527693D0A0091CAD1 /* Topic.swift */,
+				4ADB72AD276943C60091CAD1 /* Topic.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4ADB72A82769436B0091CAD1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4ADB72A9276943700091CAD1 /* Extensions */,
+				4ADB72B5276945890091CAD1 /* JSON */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		4ADB72A9276943700091CAD1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4ADB72AA276943760091CAD1 /* CoreDataExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4ADB72B5276945890091CAD1 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				4ADB72B3276945860091CAD1 /* readJSON.swift */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ADB7292276938720091CAD1 /* Preview Assets.xcassets in Resources */,
+				4ADB72B22769454A0091CAD1 /* topics.json in Resources */,
 				4ADB728F276938720091CAD1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,10 +219,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ADB7297276938720091CAD1 /* Skillmprove.xcdatamodeld in Sources */,
-				4ADB72A627693D0A0091CAD1 /* Topic.swift in Sources */,
 				4ADB7294276938720091CAD1 /* Persistence.swift in Sources */,
 				4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */,
 				4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */,
+				4ADB72AE276943C60091CAD1 /* Topic.swift in Sources */,
+				4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */,
+				4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */,
+				4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */,
 				4ADB72A127693BC60091CAD1 /* TopicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
