@@ -13,8 +13,6 @@ struct QuestionView: View {
     var body: some View {
         content
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("Question")
-            .disableNavigationBarTransparancy()
     }
     var content: some View {
         VStack {
@@ -23,6 +21,9 @@ struct QuestionView: View {
             Spacer()
             answers
         }
+        .background(
+            LinearGradient(colors: [.purple, .cyan], startPoint: .top, endPoint: .bottom)
+        )
     }
     var questionCard: some View {
         Text(questions[0].text)
