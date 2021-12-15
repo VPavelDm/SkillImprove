@@ -9,14 +9,18 @@ import SwiftUI
 
 struct Cardify: ViewModifier {
     @State private var offset: CGSize = CGSize.zero
+    private var offsetToRemove: Double { 50 }
+    var onRemove: () -> Void
 
     func body(content: Content) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
+                .fill()
                 .foregroundColor(.white)
             content
         }
         .aspectRatio(1.0, contentMode: .fit)
+        .shadow(radius: 5)
         .rotationEffect(.degrees(Double(offset.width / 20)), anchor: .bottom)
         .offset(x: offset.width, y: 0)
         .gesture(
@@ -26,7 +30,11 @@ struct Cardify: ViewModifier {
                 }
                 .onEnded { _ in
                     withAnimation {
-                        offset = .zero
+                        if abs(offset.width) > offsetToRemove {
+                            onRemove()
+                        } else {
+                            offset = .zero
+                        }
                     }
                 }
         )
@@ -34,7 +42,7 @@ struct Cardify: ViewModifier {
 }
 
 extension View {
-    func cardify() -> some View {
-        modifier(Cardify())
+    func cardify(onRemove: @escaping () -> Void) -> some View {
+        modifier(Cardify(onRemove: onRemove))
     }
 }

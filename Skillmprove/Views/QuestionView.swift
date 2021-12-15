@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct QuestionView: View {
-    var questions: [Question]
     
+    // MARK: - Properties
+    @State private var questions: [Question]
+    
+    // MARK: - Inits
+    init(questions: [Question]) {
+        self._questions = State(initialValue: questions)
+    }
+
+    // MARK: - Views
     var body: some View {
         content
             .navigationBarTitleDisplayMode(.inline)
@@ -27,8 +35,14 @@ struct QuestionView: View {
     }
     var questionCard: some View {
         ZStack {
-            Text("Hello")
-                .cardify()
+            ForEach(questions.indices, id: \.self) { index in
+                Text(questions[index].text)
+                    .cardify {
+                        questions.remove(at: index)
+                    }
+                    .offset(x: questionCardOffset(for: index),
+                            y: -questionCardOffset(for: index))
+            }
         }
     }
     var answers: some View {
@@ -51,6 +65,12 @@ struct QuestionView: View {
         }
 
     }
+    
+    // MARK: - UI Utils
+    func questionCardOffset(for index: Int) -> Double {
+        Double((questions.count - 1 - index) * 5)
+    }
+    
 }
 
 struct QuestionView_Previews: PreviewProvider {
