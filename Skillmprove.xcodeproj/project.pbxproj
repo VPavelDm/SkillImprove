@@ -10,6 +10,8 @@
 		4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A720276A4CC90068BFB7 /* Cardify.swift */; };
 		4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A722276A5EC60068BFB7 /* DeckView.swift */; };
 		4A24A725276A67DC0068BFB7 /* ChooseAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A724276A67DC0068BFB7 /* ChooseAnswer.swift */; };
+		4A24A72F276A7B540068BFB7 /* IdentifiableBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A72E276A7B540068BFB7 /* IdentifiableBox.swift */; };
+		4A24A731276A80F00068BFB7 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A730276A80F00068BFB7 /* PopupView.swift */; };
 		4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728A276938710091CAD1 /* SkillmproveApp.swift */; };
 		4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728C276938710091CAD1 /* TopicsView.swift */; };
 		4ADB728F276938720091CAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB728E276938720091CAD1 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 		4A24A720276A4CC90068BFB7 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		4A24A722276A5EC60068BFB7 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		4A24A724276A67DC0068BFB7 /* ChooseAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAnswer.swift; sourceTree = "<group>"; };
+		4A24A72E276A7B540068BFB7 /* IdentifiableBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableBox.swift; sourceTree = "<group>"; };
+		4A24A730276A80F00068BFB7 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		4ADB7287276938710091CAD1 /* Skillmprove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skillmprove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADB728A276938710091CAD1 /* SkillmproveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillmproveApp.swift; sourceTree = "<group>"; };
 		4ADB728C276938710091CAD1 /* TopicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsView.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				4ADB72C12769DC150091CAD1 /* ViewModifiers */,
 				4ADB72A9276943700091CAD1 /* Extensions */,
 				4ADB72B5276945890091CAD1 /* JSON */,
+				4A24A72E276A7B540068BFB7 /* IdentifiableBox.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			children = (
 				4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */,
 				4A24A720276A4CC90068BFB7 /* Cardify.swift */,
+				4A24A730276A80F00068BFB7 /* PopupView.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 				4A24A725276A67DC0068BFB7 /* ChooseAnswer.swift in Sources */,
 				4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */,
 				4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */,
+				4A24A72F276A7B540068BFB7 /* IdentifiableBox.swift in Sources */,
 				4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */,
 				4ADB72AE276943C60091CAD1 /* Topic.swift in Sources */,
 				4ADB72C02769CB540091CAD1 /* Question.swift in Sources */,
@@ -265,6 +272,7 @@
 				4ADB72BE2769CA620091CAD1 /* QuestionView.swift in Sources */,
 				4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */,
 				4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */,
+				4A24A731276A80F00068BFB7 /* PopupView.swift in Sources */,
 				4ADB72B7276947F20091CAD1 /* Card.swift in Sources */,
 				4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */,
 				4ADB72BC27694BBC0091CAD1 /* SwiftUIExtensions.swift in Sources */,

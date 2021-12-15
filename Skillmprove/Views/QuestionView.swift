@@ -11,6 +11,7 @@ struct QuestionView: View {
     
     // MARK: - Properties
     @State private var questions: [Question]
+    @State private var isAnswerCorrect: IdentifiableBox<Bool>?
     private var currentQuestion: Question? {
         questions.last
     }
@@ -24,6 +25,13 @@ struct QuestionView: View {
     var body: some View {
         content
             .navigationBarTitleDisplayMode(.inline)
+            .popup(item: isAnswerCorrect) {
+                if isAnswerCorrect?.value == true {
+                    Text("Correct")
+                } else {
+                    Text("Incorrect")
+                }
+            }
     }
     var content: some View {
         VStack {
@@ -47,12 +55,7 @@ struct QuestionView: View {
     }
     func answerButton(text: String) -> some View {
         Button {
-            guard let currentQuestion = currentQuestion else { return }
-            if currentQuestion.text == text {
-                
-            } else {
-                
-            }
+            isAnswerCorrect = .init(value: currentQuestion?.correctAnswer == text)
         } label: {
             Text(text)
                 .fontWeight(.medium)
