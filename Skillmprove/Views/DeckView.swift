@@ -20,6 +20,7 @@ struct DeckView: View {
                     }
                     .offset(x: questionCardOffset(for: index),
                             y: -questionCardOffset(for: index))
+                    .opacity(isQuestionCardVisible(for: index) ? 1 : 0)
                     .zIndex(Double(index))
             }
         }
@@ -27,7 +28,18 @@ struct DeckView: View {
     
     // MARK: - UI Utils
     func questionCardOffset(for index: Int) -> Double {
-        Double((questions.count - 1 - index) * 5)
+        if isQuestionCardVisible(for: index) {
+            return Double((questions.count - 1 - index) * cardOffsetFactor)
+        } else {
+            return questionCardOffset(for: questions.count - visibleCardsCount)
+        }
     }
+    func isQuestionCardVisible(for index: Int) -> Bool {
+        questions.count <= visibleCardsCount || index >= questions.count - visibleCardsCount
+    }
+    
+    // MARK: - UI Constants
+    private let visibleCardsCount = 3
+    private let cardOffsetFactor = 5
 }
 
