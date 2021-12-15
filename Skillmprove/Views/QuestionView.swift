@@ -28,9 +28,8 @@ struct QuestionView: View {
     var questionCard: some View {
         Text(questions[0].text)
             .font(.system(size: 24, weight: .medium))
-            .foregroundColor(.white)
             .frame(maxWidth: .infinity, maxHeight: 300)
-            .background(Color.green)
+            .background(Color.white)
             .cornerRadius(16)
     }
     var answers: some View {
@@ -44,10 +43,12 @@ struct QuestionView: View {
         Button {
             
         } label: {
-            Text("answer")
+            Text("Answer")
+                .fontWeight(.medium)
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 10)
-                .background(Color.red)
+                .foregroundColor(.white)
+                .padding(.vertical, 20)
+                .background(Color.purple.opacity(0.5))
         }
 
     }
