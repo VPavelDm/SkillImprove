@@ -41,10 +41,15 @@ private struct ContentTO: Decodable {
 private struct TopicTO: Decodable {
     var title: String
     var card: CardTO
+    var questions: [QuestionTO]
 }
 private struct CardTO: Decodable {
     var textColor: String
     var backgroundColors: [String]
+}
+private struct QuestionTO: Decodable {
+    var text: String
+    var answer: String
 }
 
 // MARK: - Mapping
@@ -56,6 +61,7 @@ extension PersistenceController {
         let topic = Topic(context: context)
         topic.title = object.title
         topic.card = map(from: object.card, in: context)
+        topic.questions = object.questions.map { map(from: $0, in: context) }
         return topic
     }
     private static func map(from object: CardTO, in context: NSManagedObjectContext) -> Card {
@@ -63,5 +69,11 @@ extension PersistenceController {
         card.textColor = Color(hex: object.textColor)
         card.backgroundColors = object.backgroundColors.map { Color(hex: $0) }
         return card
+    }
+    private static func map(from object: QuestionTO, in context: NSManagedObjectContext) -> Question {
+        let question = Question(context: context)
+        question.text = object.text
+        question.answer = object.answer
+        return question
     }
 }

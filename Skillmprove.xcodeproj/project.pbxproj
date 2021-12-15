@@ -22,6 +22,8 @@
 		4ADB72B7276947F20091CAD1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72B6276947F20091CAD1 /* Card.swift */; };
 		4ADB72B9276949830091CAD1 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72B8276949830091CAD1 /* UIKitExtensions.swift */; };
 		4ADB72BC27694BBC0091CAD1 /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BB27694BBC0091CAD1 /* SwiftUIExtensions.swift */; };
+		4ADB72BE2769CA620091CAD1 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BD2769CA620091CAD1 /* QuestionView.swift */; };
+		4ADB72C02769CB540091CAD1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BF2769CB540091CAD1 /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		4ADB72B6276947F20091CAD1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4ADB72B8276949830091CAD1 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		4ADB72BB27694BBC0091CAD1 /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
+		4ADB72BD2769CA620091CAD1 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		4ADB72BF2769CB540091CAD1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			children = (
 				4ADB728C276938710091CAD1 /* TopicsView.swift */,
 				4ADB72A027693BC60091CAD1 /* TopicView.swift */,
+				4ADB72BD2769CA620091CAD1 /* QuestionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			children = (
 				4ADB72AD276943C60091CAD1 /* Topic.swift */,
 				4ADB72B6276947F20091CAD1 /* Card.swift */,
+				4ADB72BF2769CB540091CAD1 /* Question.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,7 +238,9 @@
 				4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */,
 				4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */,
 				4ADB72AE276943C60091CAD1 /* Topic.swift in Sources */,
+				4ADB72C02769CB540091CAD1 /* Question.swift in Sources */,
 				4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */,
+				4ADB72BE2769CA620091CAD1 /* QuestionView.swift in Sources */,
 				4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */,
 				4ADB72B7276947F20091CAD1 /* Card.swift in Sources */,
 				4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */,

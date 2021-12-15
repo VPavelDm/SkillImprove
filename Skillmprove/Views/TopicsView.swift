@@ -32,7 +32,11 @@ struct TopicsListView: View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(topics) { topic in
-                    TopicView(topic: topic)
+                    NavigationLink {
+                        QuestionView(questions: topic.questions)
+                    } label: {
+                        TopicView(topic: topic)
+                    }
                 }
             }
             .padding()

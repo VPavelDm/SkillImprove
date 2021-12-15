@@ -5,31 +5,64 @@
             "card": {
                 "textColor": "#ffffff",
                 "backgroundColors": ["34c759", "ffcc00"]
-            }
+            },
+            "questions": [
+                {
+                    "text": "Чему равен 2+2",
+                    "answer": "2"
+                }, {
+                    "text": "Чему равен 2*2",
+                    "answer": "2"
+                }
+            ]
         }, {
             "title": "UIKit",
             "card": {
                 "textColor": "#ffffff",
                 "backgroundColors": ["ff3b30", "007aff"]
-            }
+            },
+            "questions": [
+                {
+                    "text": "Чему равен 2+2",
+                    "answer": "2"
+                }
+            ]
         }, {
             "title": "Concurrency",
             "card": {
                 "textColor": "#ffffff",
                 "backgroundColors": ["30b0c7", "ff2d54"]
-            }
+            },
+            "questions": [
+                {
+                    "text": "Чему равен 2+2",
+                    "answer": "2"
+                }
+            ]
         }, {
             "title": "Animation",
             "card": {
                 "textColor": "#ffffff",
                 "backgroundColors": ["00c7bd", "34c759"]
-            }
+            },
+            "questions": [
+                {
+                    "text": "Чему равен 2+2",
+                    "answer": "2"
+                }
+            ]
         }, {
             "title": "SwiftUI",
             "card": {
                 "textColor": "#ffffff",
                 "backgroundColors": ["ffe600", "ff00fb"]
-            }
+            },
+            "questions": [
+                {
+                    "text": "Чему равен 2+2",
+                    "answer": "2"
+                }
+            ]
         }
     ]
 }

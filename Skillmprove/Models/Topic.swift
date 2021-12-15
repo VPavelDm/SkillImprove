@@ -17,6 +17,10 @@ extension Topic {
         get { card_! }
         set { card_ = newValue }
     }
+    var questions: [Question] {
+        get { questions_!.toArray() }
+        set { questions_ = newValue.nsOrderedSet }
+    }
     
     // MARK: - Requests
     static func fetchRequest(_ predicate: NSPredicate) -> NSFetchRequest<Topic> {
