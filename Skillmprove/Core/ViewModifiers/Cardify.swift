@@ -38,6 +38,10 @@ struct Cardify: ViewModifier {
                     }
                 }
         )
+        .transition(
+            .asymmetric(insertion: .identity,
+                        removal: .move(edge: offset.width > 0 ? .trailing : .leading))
+        )
     }
 }
 

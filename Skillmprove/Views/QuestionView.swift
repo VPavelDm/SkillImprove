@@ -42,6 +42,7 @@ struct QuestionView: View {
                     }
                     .offset(x: questionCardOffset(for: index),
                             y: -questionCardOffset(for: index))
+                    .zIndex(Double(index))
             }
         }
     }
