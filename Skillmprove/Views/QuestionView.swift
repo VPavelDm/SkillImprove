@@ -26,11 +26,10 @@ struct QuestionView: View {
         )
     }
     var questionCard: some View {
-        Text(questions[0].text)
-            .font(.system(size: 24, weight: .medium))
-            .frame(maxWidth: .infinity, maxHeight: 300)
-            .background(Color.white)
-            .cornerRadius(16)
+        ZStack {
+            Text("Hello")
+                .cardify()
+        }
     }
     var answers: some View {
         LazyVGrid(columns: [.init(spacing: 2), .init()], spacing: 2) {

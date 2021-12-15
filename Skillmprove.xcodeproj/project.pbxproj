@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A720276A4CC90068BFB7 /* Cardify.swift */; };
 		4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728A276938710091CAD1 /* SkillmproveApp.swift */; };
 		4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728C276938710091CAD1 /* TopicsView.swift */; };
 		4ADB728F276938720091CAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB728E276938720091CAD1 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A24A720276A4CC90068BFB7 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		4ADB7287276938710091CAD1 /* Skillmprove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skillmprove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADB728A276938710091CAD1 /* SkillmproveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillmproveApp.swift; sourceTree = "<group>"; };
 		4ADB728C276938710091CAD1 /* TopicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */,
+				4A24A720276A4CC90068BFB7 /* Cardify.swift */,
 			);
 			path = ViewModifiers;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				4ADB7297276938720091CAD1 /* Skillmprove.xcdatamodeld in Sources */,
 				4ADB7294276938720091CAD1 /* Persistence.swift in Sources */,
+				4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */,
 				4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */,
 				4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */,
 				4ADB72AE276943C60091CAD1 /* Topic.swift in Sources */,
