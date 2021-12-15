@@ -19,9 +19,10 @@ struct QuestionView: View {
     var content: some View {
         VStack {
             questionCard
+                .padding()
             Spacer()
+            answers
         }
-        .padding()
     }
     var questionCard: some View {
         Text(questions[0].text)
@@ -30,6 +31,24 @@ struct QuestionView: View {
             .frame(maxWidth: .infinity, maxHeight: 300)
             .background(Color.green)
             .cornerRadius(16)
+    }
+    var answers: some View {
+        LazyVGrid(columns: [.init(spacing: 2), .init()], spacing: 2) {
+            ForEach(1...4, id: \.self) { _ in
+                answerButton
+            }
+        }
+    }
+    var answerButton: some View {
+        Button {
+            
+        } label: {
+            Text("answer")
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 10)
+                .background(Color.red)
+        }
+
     }
 }
 
