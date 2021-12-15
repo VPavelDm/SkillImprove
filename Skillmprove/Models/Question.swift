@@ -13,8 +13,12 @@ extension Question {
         get { text_! }
         set { text_ = newValue }
     }
-    var answer: String {
-        get { answer_! }
-        set { answer_ = newValue }
+    var correctAnswer: String {
+        get { correctAnswer_! }
+        set { correctAnswer_ = newValue }
+    }
+    var answers: [ChooseAnswer] {
+        get { answers_!.toArray() }
+        set { answers_ = newValue.nsOrderedSet }
     }
 }

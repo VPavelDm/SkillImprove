@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A720276A4CC90068BFB7 /* Cardify.swift */; };
 		4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A722276A5EC60068BFB7 /* DeckView.swift */; };
+		4A24A725276A67DC0068BFB7 /* ChooseAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A724276A67DC0068BFB7 /* ChooseAnswer.swift */; };
 		4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728A276938710091CAD1 /* SkillmproveApp.swift */; };
 		4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728C276938710091CAD1 /* TopicsView.swift */; };
 		4ADB728F276938720091CAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB728E276938720091CAD1 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		4A24A720276A4CC90068BFB7 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		4A24A722276A5EC60068BFB7 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		4A24A724276A67DC0068BFB7 /* ChooseAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAnswer.swift; sourceTree = "<group>"; };
 		4ADB7287276938710091CAD1 /* Skillmprove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skillmprove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADB728A276938710091CAD1 /* SkillmproveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillmproveApp.swift; sourceTree = "<group>"; };
 		4ADB728C276938710091CAD1 /* TopicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				4ADB72AD276943C60091CAD1 /* Topic.swift */,
 				4ADB72B6276947F20091CAD1 /* Card.swift */,
 				4ADB72BF2769CB540091CAD1 /* Question.swift */,
+				4A24A724276A67DC0068BFB7 /* ChooseAnswer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			files = (
 				4ADB7297276938720091CAD1 /* Skillmprove.xcdatamodeld in Sources */,
 				4ADB7294276938720091CAD1 /* Persistence.swift in Sources */,
+				4A24A725276A67DC0068BFB7 /* ChooseAnswer.swift in Sources */,
 				4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */,
 				4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */,
 				4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */,

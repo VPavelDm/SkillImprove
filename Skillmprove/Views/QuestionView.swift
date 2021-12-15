@@ -35,16 +35,18 @@ struct QuestionView: View {
     }
     var answers: some View {
         LazyVGrid(columns: [.init(spacing: 2), .init()], spacing: 2) {
-            ForEach(1...4, id: \.self) { _ in
-                answerButton
+            if let answers = questions.last?.answers {
+                ForEach(answers) { answer in
+                    answerButton(text: answer.text)
+                }
             }
         }
     }
-    var answerButton: some View {
+    func answerButton(text: String) -> some View {
         Button {
             
         } label: {
-            Text("Answer")
+            Text(text)
                 .fontWeight(.medium)
                 .frame(maxWidth: .infinity)
                 .foregroundColor(.white)

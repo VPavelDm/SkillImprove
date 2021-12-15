@@ -49,7 +49,8 @@ private struct CardTO: Decodable {
 }
 private struct QuestionTO: Decodable {
     var text: String
-    var answer: String
+    var correctAnswer: String
+    var answers: [String]
 }
 
 // MARK: - Mapping
@@ -73,7 +74,13 @@ extension PersistenceController {
     private static func map(from object: QuestionTO, in context: NSManagedObjectContext) -> Question {
         let question = Question(context: context)
         question.text = object.text
-        question.answer = object.answer
+        question.correctAnswer = object.correctAnswer
+        question.answers = object.answers.map { map(from: $0, in: context) }
         return question
+    }
+    private static func map(from object: String, in context: NSManagedObjectContext) -> ChooseAnswer {
+        let answer = ChooseAnswer(context: context)
+        answer.text = object
+        return answer
     }
 }
