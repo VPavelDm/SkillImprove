@@ -24,7 +24,7 @@ struct QuestionView: View {
     }
     var content: some View {
         VStack {
-            questionCard
+            DeckView(questions: $questions)
                 .padding()
             Spacer()
             answers
@@ -32,19 +32,6 @@ struct QuestionView: View {
         .background(
             LinearGradient(colors: [.purple, .cyan], startPoint: .top, endPoint: .bottom)
         )
-    }
-    var questionCard: some View {
-        ZStack {
-            ForEach(questions.indices, id: \.self) { index in
-                Text(questions[index].text)
-                    .cardify {
-                        questions.remove(at: index)
-                    }
-                    .offset(x: questionCardOffset(for: index),
-                            y: -questionCardOffset(for: index))
-                    .zIndex(Double(index))
-            }
-        }
     }
     var answers: some View {
         LazyVGrid(columns: [.init(spacing: 2), .init()], spacing: 2) {
@@ -66,12 +53,7 @@ struct QuestionView: View {
         }
 
     }
-    
-    // MARK: - UI Utils
-    func questionCardOffset(for index: Int) -> Double {
-        Double((questions.count - 1 - index) * 5)
-    }
-    
+        
 }
 
 struct QuestionView_Previews: PreviewProvider {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A720276A4CC90068BFB7 /* Cardify.swift */; };
+		4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A722276A5EC60068BFB7 /* DeckView.swift */; };
 		4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728A276938710091CAD1 /* SkillmproveApp.swift */; };
 		4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728C276938710091CAD1 /* TopicsView.swift */; };
 		4ADB728F276938720091CAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB728E276938720091CAD1 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		4A24A720276A4CC90068BFB7 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		4A24A722276A5EC60068BFB7 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		4ADB7287276938710091CAD1 /* Skillmprove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skillmprove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADB728A276938710091CAD1 /* SkillmproveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillmproveApp.swift; sourceTree = "<group>"; };
 		4ADB728C276938710091CAD1 /* TopicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				4ADB728C276938710091CAD1 /* TopicsView.swift */,
 				4ADB72A027693BC60091CAD1 /* TopicView.swift */,
 				4ADB72BD2769CA620091CAD1 /* QuestionView.swift */,
+				4A24A722276A5EC60068BFB7 /* DeckView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */,
 				4ADB72BC27694BBC0091CAD1 /* SwiftUIExtensions.swift in Sources */,
 				4ADB72B9276949830091CAD1 /* UIKitExtensions.swift in Sources */,
+				4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */,
 				4ADB72A127693BC60091CAD1 /* TopicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
