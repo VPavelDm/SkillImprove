@@ -24,6 +24,7 @@
 		4ADB72BC27694BBC0091CAD1 /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BB27694BBC0091CAD1 /* SwiftUIExtensions.swift */; };
 		4ADB72BE2769CA620091CAD1 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BD2769CA620091CAD1 /* QuestionView.swift */; };
 		4ADB72C02769CB540091CAD1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BF2769CB540091CAD1 /* Question.swift */; };
+		4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		4ADB72BB27694BBC0091CAD1 /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
 		4ADB72BD2769CA620091CAD1 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		4ADB72BF2769CB540091CAD1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTransparancy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		4ADB72A82769436B0091CAD1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				4ADB72C12769DC150091CAD1 /* ViewModifiers */,
 				4ADB72A9276943700091CAD1 /* Extensions */,
 				4ADB72B5276945890091CAD1 /* JSON */,
 			);
@@ -160,6 +163,14 @@
 				4ADB72B3276945860091CAD1 /* readJSON.swift */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		4ADB72C12769DC150091CAD1 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */,
+			);
+			path = ViewModifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 				4ADB72C02769CB540091CAD1 /* Question.swift in Sources */,
 				4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */,
 				4ADB72BE2769CA620091CAD1 /* QuestionView.swift in Sources */,
+				4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */,
 				4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */,
 				4ADB72B7276947F20091CAD1 /* Card.swift in Sources */,
 				4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */,
