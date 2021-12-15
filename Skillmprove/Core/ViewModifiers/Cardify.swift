@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Cardify: ViewModifier {
+    @State private var offset: CGSize = CGSize.zero
+
     func body(content: Content) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
@@ -15,6 +17,19 @@ struct Cardify: ViewModifier {
             content
         }
         .aspectRatio(1.0, contentMode: .fit)
+        .rotationEffect(.degrees(Double(offset.width / 20)), anchor: .bottom)
+        .offset(x: offset.width, y: 0)
+        .gesture(
+            DragGesture()
+                .onChanged { gesture in
+                    offset = gesture.translation
+                }
+                .onEnded { _ in
+                    withAnimation {
+                        offset = .zero
+                    }
+                }
+        )
     }
 }
 
