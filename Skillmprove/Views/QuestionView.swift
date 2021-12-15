@@ -11,6 +11,9 @@ struct QuestionView: View {
     
     // MARK: - Properties
     @State private var questions: [Question]
+    private var currentQuestion: Question? {
+        questions.last
+    }
     
     // MARK: - Inits
     init(questions: [Question]) {
@@ -35,7 +38,7 @@ struct QuestionView: View {
     }
     var answers: some View {
         LazyVGrid(columns: [.init(spacing: 2), .init()], spacing: 2) {
-            if let answers = questions.last?.answers {
+            if let answers = currentQuestion?.answers {
                 ForEach(answers) { answer in
                     answerButton(text: answer.text)
                 }
@@ -44,7 +47,12 @@ struct QuestionView: View {
     }
     func answerButton(text: String) -> some View {
         Button {
-            
+            guard let currentQuestion = currentQuestion else { return }
+            if currentQuestion.text == text {
+                
+            } else {
+                
+            }
         } label: {
             Text(text)
                 .fontWeight(.medium)
