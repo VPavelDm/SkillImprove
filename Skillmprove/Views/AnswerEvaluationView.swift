@@ -62,8 +62,8 @@ struct AnswerEvaluationView: View {
     var cup: some View {
         Text(answerType == .correct ? correctIcon : wrongIcon)
             .font(.system(size: 90))
-            .rotationEffect(.init(degrees: shouldStartIconRotationAnimation ? 360 : 0))
-            .animation(.linear(duration: 1), value: shouldStartIconRotationAnimation)
+            .rotationEffect(.init(degrees: shouldStartIconRotationAnimation ? 180 : 0))
+            .animation(.linear(duration: 0.5), value: shouldStartIconRotationAnimation)
     }
     var title: some View {
         Text(answerType == .correct ? correctTitle : wrongTitle)
