@@ -23,6 +23,7 @@ struct CorrectAnswerView: View {
             Spacer()
             cup
             title
+            description
             Spacer()
             nextButton
         }
@@ -39,8 +40,12 @@ struct CorrectAnswerView: View {
     }
     var title: some View {
         Text("Congrats!")
-            .font(.system(size: 24, weight: .bold))
-            .foregroundColor(.green)
+            .font(.custom("MarkerFelt-Wide", size: 32))
+    }
+    var description: some View {
+        Text("Your answer is correct")
+            .font(.subheadline)
+            .foregroundColor(.secondary)
     }
     var nextButton: some View {
         Button {
