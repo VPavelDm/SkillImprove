@@ -1,5 +1,5 @@
 //
-//  CorrectAnswerView.swift
+//  AnswerEvaluationView.swift
 //  Skillmprove
 //
 //  Created by Pavel Vaitsikhouski on 15.12.21.
@@ -8,10 +8,18 @@
 import SwiftUI
 import ConfettiSwiftUI
 
-struct CorrectAnswerView: View {
+enum AnswerEvaluationType {
+    case correct
+    case wrong
+}
+
+struct AnswerEvaluationView: View {
     @State private var confettiCounter = 0
+    @State private var shouldStartIconRotationAnimation = false
     @Binding var isPresented: Bool
+    var answerType: AnswerEvaluationType
     
+    // MARK: - Views
     var body: some View {
         ZStack {
             Color.black.opacity(0.5)
@@ -30,11 +38,13 @@ struct CorrectAnswerView: View {
                 Spacer()
                 nextButton
             }
-            ConfettiCannon(counter: $confettiCounter,
-                           num: 50,
-                           colors: [.purple, .cyan],
-                           confettiSize: 20,
-                           radius: 400)
+            if answerType == .correct {
+                ConfettiCannon(counter: $confettiCounter,
+                               num: 50,
+                               colors: [.purple, .cyan],
+                               confettiSize: 20,
+                               radius: 400)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .aspectRatio(1.0, contentMode: .fit)
@@ -44,18 +54,23 @@ struct CorrectAnswerView: View {
         .shadow(radius: 5)
         .onAppear {
             confettiCounter += 1
+            if answerType == .wrong {
+                shouldStartIconRotationAnimation = true
+            }
         }
     }
     var cup: some View {
-        Text("🏆")
+        Text(answerType == .correct ? correctIcon : wrongIcon)
             .font(.system(size: 90))
+            .rotationEffect(.init(degrees: shouldStartIconRotationAnimation ? 360 : 0))
+            .animation(.linear(duration: 1), value: shouldStartIconRotationAnimation)
     }
     var title: some View {
-        Text("Congrats!")
+        Text(answerType == .correct ? correctTitle : wrongTitle)
             .font(.custom("MarkerFelt-Wide", size: 32))
     }
     var description: some View {
-        Text("Your answer is correct")
+        Text(answerType == .correct ? correctDescription : wrongDescription)
             .font(.subheadline)
             .foregroundColor(.secondary)
     }
@@ -63,7 +78,7 @@ struct CorrectAnswerView: View {
         Button {
             isPresented = false
         } label: {
-            Text("Next")
+            Text(answerType == .correct ? nextBtnCorrect : nextBtnWrong)
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundColor(.white)
                 .padding(.vertical, 10)
@@ -76,10 +91,20 @@ struct CorrectAnswerView: View {
         }
         .padding(.bottom, 16)
     }
+    
+    // MARK: - Constants
+    private let nextBtnCorrect = "Next"
+    private let nextBtnWrong = "Try again"
+    private let correctDescription = "Your answer is correct"
+    private let wrongDescription = "Your answer is wrong"
+    private let correctTitle = "Congrats!"
+    private let wrongTitle = "Sorry! 😔"
+    private let correctIcon = "🏆"
+    private let wrongIcon = "🚫"
 }
 
 struct CorrectAnswerView_Previews: PreviewProvider {
     static var previews: some View {
-        CorrectAnswerView(isPresented: .constant(true))
+        AnswerEvaluationView(isPresented: .constant(true), answerType: .correct)
     }
 }

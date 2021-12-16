@@ -27,10 +27,9 @@ struct QuestionView: View {
         content
             .navigationBarTitleDisplayMode(.inline)
             .popup(isPresented: $shouldShowAlert) {
-                if isAnswerCorrect == true {
-                    CorrectAnswerView(isPresented: $shouldShowAlert)
-                } else {
-                    Text("Test")
+                if let isAnswerCorrect = isAnswerCorrect {
+                    AnswerEvaluationView(isPresented: $shouldShowAlert,
+                                         answerType: isAnswerCorrect ? .correct : .wrong)
                 }
             }
     }
