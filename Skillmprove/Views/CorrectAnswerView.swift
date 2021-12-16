@@ -11,7 +11,7 @@ struct CorrectAnswerView: View {
     
     var body: some View {
         ZStack {
-            Color.black.opacity(0.5)
+            Color.black.opacity(1)
             Text("Congrats!")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .aspectRatio(1.0, contentMode: .fit)

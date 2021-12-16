@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PopupView<T>: ViewModifier where T: View {
+    @Environment(\.viewController) private var viewControllerHolder: UIViewController?
     let popup: () -> T
     let isPresented: Bool
     let alignment: Alignment
@@ -20,7 +21,13 @@ struct PopupView<T>: ViewModifier where T: View {
 
     func body(content: Content) -> some View {
         content
-            .overlay(popupContent())
+            .onAppear {
+//                if isPresented {
+                    viewControllerHolder?.present(style: .fullScreen, builder: {
+                        popup()
+                    })
+//                }
+            }
     }
     
     @ViewBuilder
