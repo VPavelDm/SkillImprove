@@ -12,6 +12,7 @@ struct QuestionContentView: View {
     
     var body: some View {
         Text(text)
+            .foregroundColor(.black)
             .font(.title)
             .padding()
     }

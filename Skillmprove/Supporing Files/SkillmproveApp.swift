@@ -15,6 +15,11 @@ struct SkillmproveApp: App {
         WindowGroup {
             TopicsView()
                 .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+                .preferredColorScheme(.dark)
+                .onAppear {
+                    UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+                    UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
+                }
         }
     }
 }
