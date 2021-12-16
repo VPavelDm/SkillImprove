@@ -32,6 +32,11 @@ struct QuestionView: View {
                                          answerType: isAnswerCorrect ? .correct : .wrong)
                 }
             }
+            .onChange(of: shouldShowAlert) { isAlertVisible in
+                if !isAlertVisible && isAnswerCorrect ?? false {
+                    questions.remove(at: questions.count - 1)
+                }
+            }
     }
     var content: some View {
         VStack {
