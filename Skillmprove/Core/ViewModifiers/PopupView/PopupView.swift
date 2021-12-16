@@ -10,16 +10,17 @@ import UIKit
 
 extension View {
     func popup<PopupView: View>(isPresented: Binding<Bool>, @ViewBuilder content: () -> PopupView) -> some View {
-        let alertVC = PopupHostedViewController(isPresented: isPresented, rootView: content())
-        alertVC.modalPresentationStyle = .overCurrentContext
-        alertVC.view.backgroundColor = UIColor.clear
-        alertVC.modalTransitionStyle = .crossDissolve
-
+        let topViewController = topViewController()
+        
         if isPresented.wrappedValue {
-            let viewController = topViewController()
-            viewController?.present(alertVC, animated: true, completion: nil)
+            let alertVC = PopupHostedViewController(isPresented: isPresented, rootView: content())
+            alertVC.modalPresentationStyle = .overCurrentContext
+            alertVC.view.backgroundColor = UIColor.clear
+            alertVC.modalTransitionStyle = .crossDissolve
+            
+            topViewController?.present(alertVC, animated: true, completion: nil)
         } else {
-            alertVC.dismiss(animated: true, completion: nil)
+            topViewController?.presentedViewController?.dismiss(animated: true)
         }
 
         return self
