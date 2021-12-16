@@ -32,6 +32,7 @@
 		4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */; };
 		4AF3864A276BABD6003E376A /* PopupHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF38649276BABD6003E376A /* PopupHostedViewController.swift */; };
 		4AF3864D276BBB08003E376A /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF3864C276BBB08003E376A /* ConfettiSwiftUI */; };
+		4AF38651276BC212003E376A /* QuestionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF38650276BC212003E376A /* QuestionContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		4ADB72BF2769CB540091CAD1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTransparancy.swift; sourceTree = "<group>"; };
 		4AF38649276BABD6003E376A /* PopupHostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHostedViewController.swift; sourceTree = "<group>"; };
+		4AF38650276BC212003E376A /* QuestionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				4ADB72BD2769CA620091CAD1 /* QuestionView.swift */,
 				4A24A722276A5EC60068BFB7 /* DeckView.swift */,
 				4A24A732276A866B0068BFB7 /* AnswerEvaluationView.swift */,
+				4AF38650276BC212003E376A /* QuestionContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				4ADB72C02769CB540091CAD1 /* Question.swift in Sources */,
 				4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */,
 				4ADB72BE2769CA620091CAD1 /* QuestionView.swift in Sources */,
+				4AF38651276BC212003E376A /* QuestionContentView.swift in Sources */,
 				4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */,
 				4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */,
 				4A24A731276A80F00068BFB7 /* PopupView.swift in Sources */,

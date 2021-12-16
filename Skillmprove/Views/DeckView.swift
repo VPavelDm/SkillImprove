@@ -14,7 +14,7 @@ struct DeckView: View {
     var body: some View {
         ZStack {
             ForEach(questions.indices, id: \.self) { index in
-                Text(questions[index].text)
+                QuestionContentView(text: questions[index].text)
                     .cardify {
                         questions.remove(at: index)
                     }
