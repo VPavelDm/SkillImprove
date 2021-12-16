@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct CorrectAnswerView: View {
+    @State private var confettiCounter = 0
     @Binding var isPresented: Bool
     
     var body: some View {
@@ -19,13 +21,20 @@ struct CorrectAnswerView: View {
     }
     
     var card: some View {
-        VStack {
-            Spacer()
-            cup
-            title
-            description
-            Spacer()
-            nextButton
+        ZStack(alignment: .bottom) {
+            VStack {
+                Spacer()
+                cup
+                title
+                description
+                Spacer()
+                nextButton
+            }
+            ConfettiCannon(counter: $confettiCounter,
+                           num: 50,
+                           colors: [.purple, .cyan],
+                           confettiSize: 20,
+                           radius: 400)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .aspectRatio(1.0, contentMode: .fit)
@@ -33,6 +42,9 @@ struct CorrectAnswerView: View {
         .cornerRadius(16)
         .padding(24)
         .shadow(radius: 5)
+        .onAppear {
+            confettiCounter += 1
+        }
     }
     var cup: some View {
         Text("🏆")
@@ -56,7 +68,9 @@ struct CorrectAnswerView: View {
                 .foregroundColor(.white)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 64)
-                .background(Color.red)
+                .background(
+                    LinearGradient(colors: [.purple, .cyan], startPoint: .topLeading, endPoint: .bottomTrailing)
+                )
                 .cornerRadius(16)
                 .shadow(radius: 5)
         }

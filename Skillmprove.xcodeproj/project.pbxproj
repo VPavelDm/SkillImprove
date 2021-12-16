@@ -31,6 +31,7 @@
 		4ADB72C02769CB540091CAD1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BF2769CB540091CAD1 /* Question.swift */; };
 		4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */; };
 		4AF3864A276BABD6003E376A /* PopupHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF38649276BABD6003E376A /* PopupHostedViewController.swift */; };
+		4AF3864D276BBB08003E376A /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF3864C276BBB08003E376A /* ConfettiSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF3864D276BBB08003E376A /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +217,9 @@
 			dependencies = (
 			);
 			name = Skillmprove;
+			packageProductDependencies = (
+				4AF3864C276BBB08003E376A /* ConfettiSwiftUI */,
+			);
 			productName = Skillmprove;
 			productReference = 4ADB7287276938710091CAD1 /* Skillmprove.app */;
 			productType = "com.apple.product-type.application";
@@ -243,6 +248,9 @@
 				Base,
 			);
 			mainGroup = 4ADB727E276938710091CAD1;
+			packageReferences = (
+				4AF3864B276BBB08003E376A /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = 4ADB7288276938710091CAD1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -493,6 +501,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4AF3864B276BBB08003E376A /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4AF3864C276BBB08003E376A /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AF3864B276BBB08003E376A /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		4ADB7295276938720091CAD1 /* Skillmprove.xcdatamodeld */ = {
