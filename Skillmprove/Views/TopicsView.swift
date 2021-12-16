@@ -12,6 +12,9 @@ struct TopicsView: View {
     var body: some View {
         NavigationView {
             TopicsListView()
+                .background(
+                    LinearGradient(colors: [.purple, .cyan], startPoint: .top, endPoint: .bottom)
+                )
         }
     }
 }

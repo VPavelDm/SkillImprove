@@ -27,7 +27,7 @@ struct QuestionView: View {
             .navigationBarTitleDisplayMode(.inline)
             .popup(item: isAnswerCorrect) {
                 if isAnswerCorrect?.value == true {
-                    Text("Correct")
+                    CorrectAnswerView()
                 } else {
                     Text("Incorrect")
                 }
