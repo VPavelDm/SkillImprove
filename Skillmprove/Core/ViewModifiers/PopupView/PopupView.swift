@@ -6,55 +6,37 @@
 //
 
 import SwiftUI
-
-struct PopupView<T>: ViewModifier where T: View {
-    @Environment(\.viewController) private var viewControllerHolder: UIViewController?
-    let popup: () -> T
-    let isPresented: Bool
-    let alignment: Alignment
-    
-    init(isPresented: Bool, alignment: Alignment, @ViewBuilder content: @escaping () -> T) {
-        self.isPresented = isPresented
-        self.alignment = alignment
-        popup = content
-    }
-
-    func body(content: Content) -> some View {
-        content
-            .onAppear {
-//                if isPresented {
-                    viewControllerHolder?.present(style: .fullScreen, builder: {
-                        popup()
-                    })
-//                }
-            }
-    }
-    
-    @ViewBuilder
-    private func popupContent() -> some View {
-        GeometryReader { geometry in
-            if isPresented {
-                popup()
-                    .transition(.opacity)
-                    .frame(width: geometry.size.width, height: geometry.size.height, alignment: alignment)
-            }
-        }
-    }
-}
+import UIKit
 
 extension View {
-    func popup<T: View>(
-        isPresented: Bool,
-        alignment: Alignment = .center,
-        @ViewBuilder content: @escaping () -> T
-    ) -> some View {
-        modifier(PopupView(isPresented: isPresented, alignment: alignment, content: content))
+    func popup<PopupView: View>(isPresented: Binding<Bool>, @ViewBuilder content: () -> PopupView) -> some View {
+        let alertVC = PopupHostedViewController(isPresented: isPresented, rootView: content())
+        alertVC.modalPresentationStyle = .overCurrentContext
+        alertVC.view.backgroundColor = UIColor.clear
+        alertVC.modalTransitionStyle = .crossDissolve
+
+        if isPresented.wrappedValue {
+            let viewController = topViewController()
+            viewController?.present(alertVC, animated: true, completion: nil)
+        } else {
+            alertVC.dismiss(animated: true, completion: nil)
+        }
+
+        return self
     }
-    func popup<T: View, Item: Identifiable>(
-        item: Item?,
-        alignment: Alignment = .center,
-        @ViewBuilder content: @escaping () -> T
-    ) -> some View {
-        popup(isPresented: item != nil, alignment: alignment, content: content)
+
+    private func topViewController(baseVC: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let nav = baseVC as? UINavigationController {
+            return topViewController(baseVC: nav.visibleViewController)
+        }
+        if let tab = baseVC as? UITabBarController {
+            if let selected = tab.selectedViewController {
+                return topViewController(baseVC: selected)
+            }
+        }
+        if let presented = baseVC?.presentedViewController {
+            return topViewController(baseVC: presented)
+        }
+        return baseVC
     }
 }

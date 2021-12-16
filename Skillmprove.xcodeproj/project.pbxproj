@@ -31,7 +31,7 @@
 		4ADB72BE2769CA620091CAD1 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BD2769CA620091CAD1 /* QuestionView.swift */; };
 		4ADB72C02769CB540091CAD1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BF2769CB540091CAD1 /* Question.swift */; };
 		4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */; };
-		4AF38624276BA31E003E376A /* ViewControllerHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF38623276BA31E003E376A /* ViewControllerHolder.swift */; };
+		4AF3864A276BABD6003E376A /* PopupHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF38649276BABD6003E376A /* PopupHostedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +60,7 @@
 		4ADB72BD2769CA620091CAD1 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		4ADB72BF2769CB540091CAD1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTransparancy.swift; sourceTree = "<group>"; };
-		4AF38623276BA31E003E376A /* ViewControllerHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHolder.swift; sourceTree = "<group>"; };
+		4AF38649276BABD6003E376A /* PopupHostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHostedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				4A24A730276A80F00068BFB7 /* PopupView.swift */,
-				4AF38623276BA31E003E376A /* ViewControllerHolder.swift */,
+				4AF38649276BABD6003E376A /* PopupHostedViewController.swift */,
 			);
 			path = PopupView;
 			sourceTree = "<group>";
@@ -291,9 +291,9 @@
 				4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */,
 				4A24A733276A866B0068BFB7 /* CorrectAnswerView.swift in Sources */,
 				4ADB72BC27694BBC0091CAD1 /* SwiftUIExtensions.swift in Sources */,
-				4AF38624276BA31E003E376A /* ViewControllerHolder.swift in Sources */,
 				4ADB72B9276949830091CAD1 /* UIKitExtensions.swift in Sources */,
 				4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */,
+				4AF3864A276BABD6003E376A /* PopupHostedViewController.swift in Sources */,
 				4ADB72A127693BC60091CAD1 /* TopicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

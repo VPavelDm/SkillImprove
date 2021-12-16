@@ -12,6 +12,7 @@ struct QuestionView: View {
     // MARK: - Properties
     @State private var questions: [Question]
     @State private var isAnswerCorrect: IdentifiableBox<Bool>?
+    @State private var shouldShowAlert = false
     private var currentQuestion: Question? {
         questions.last
     }
@@ -25,7 +26,7 @@ struct QuestionView: View {
     var body: some View {
         content
             .navigationBarTitleDisplayMode(.inline)
-            .popup(item: isAnswerCorrect) {
+            .popup(isPresented: $shouldShowAlert) {
                 if isAnswerCorrect?.value == true {
                     CorrectAnswerView()
                 } else {
@@ -56,6 +57,7 @@ struct QuestionView: View {
     func answerButton(text: String) -> some View {
         Button {
             isAnswerCorrect = .init(value: currentQuestion?.correctAnswer == text)
+            shouldShowAlert = true
         } label: {
             Text(text)
                 .fontWeight(.medium)
