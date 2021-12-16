@@ -28,9 +28,9 @@ struct QuestionView: View {
             .navigationBarTitleDisplayMode(.inline)
             .popup(isPresented: $shouldShowAlert) {
                 if isAnswerCorrect == true {
-                    CorrectAnswerView()
+                    CorrectAnswerView(isPresented: $shouldShowAlert)
                 } else {
-                    CorrectAnswerView()
+                    Text("Test")
                 }
             }
     }

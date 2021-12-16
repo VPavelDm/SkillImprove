@@ -19,8 +19,8 @@ extension View {
             alertVC.modalTransitionStyle = .crossDissolve
             
             topViewController?.present(alertVC, animated: true, completion: nil)
-        } else {
-            topViewController?.presentedViewController?.dismiss(animated: true)
+        } else if topViewController is PopupHostedViewController<PopupView> {
+            topViewController?.dismiss(animated: true)
         }
 
         return self
