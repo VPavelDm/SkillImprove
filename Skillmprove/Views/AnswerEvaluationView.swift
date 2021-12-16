@@ -67,12 +67,13 @@ struct AnswerEvaluationView: View {
     }
     var title: some View {
         Text(answerType == .correct ? correctTitle : wrongTitle)
+            .foregroundColor(.black)
             .font(.custom("MarkerFelt-Wide", size: 32))
     }
     var description: some View {
         Text(answerType == .correct ? correctDescription : wrongDescription)
             .font(.subheadline)
-            .foregroundColor(.secondary)
+            .foregroundColor(.gray)
     }
     var nextButton: some View {
         Button {
