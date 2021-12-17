@@ -9,7 +9,7 @@ import SwiftUI
 
 class QuizGame: ObservableObject {
     private let repository = QuestionsManager()
-    @Published var questions: [Question] = []
+    @Published private(set) var questions: [Question] = []
         
     // MARK: - Intents
     func loadQuestions(search: QuizGameSearch) {
@@ -18,5 +18,8 @@ class QuizGame: ObservableObject {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    func removeQuestion() {
+        questions.removeLast()
     }
 }

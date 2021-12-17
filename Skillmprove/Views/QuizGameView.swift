@@ -14,7 +14,7 @@ struct QuizGameView: View {
     
     var body: some View {
         NavigationView {
-            QuestionsView(questions: $game.questions)
+            content
                 .background(
                     LinearGradient(colors: [.purple, .cyan], startPoint: .top, endPoint: .bottom)
                 )
@@ -38,6 +38,19 @@ struct QuizGameView: View {
                 .onAppear {
                     game.loadQuestions(search: search)
                 }
+        }
+    }
+    private var content: some View {
+        VStack {
+            DeckView(cards: game.questions) {
+                game.removeQuestion()
+            } content: { question in
+                Text(question.text)
+                    .foregroundColor(.black)
+                    .cardify()
+            }
+            .padding()
+            Spacer()
         }
     }
 }

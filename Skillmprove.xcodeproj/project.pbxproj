@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4A179003276CEED40025CE1B /* QuizGameSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A179002276CEED40025CE1B /* QuizGameSearch.swift */; };
-		4A179005276CF4390025CE1B /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A179004276CF4390025CE1B /* QuestionsView.swift */; };
 		4A179007276CF52D0025CE1B /* QuizGameFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A179006276CF52D0025CE1B /* QuizGameFiltersView.swift */; };
 		4A17900C276D18CE0025CE1B /* QuizGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17900B276D18CE0025CE1B /* QuizGame.swift */; };
 		4A17900F276D19610025CE1B /* QuestionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17900E276D19610025CE1B /* QuestionsManager.swift */; };
@@ -32,12 +31,10 @@
 		4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */; };
 		4AF3864A276BABD6003E376A /* PopupHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF38649276BABD6003E376A /* PopupHostedViewController.swift */; };
 		4AF3864D276BBB08003E376A /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4AF3864C276BBB08003E376A /* ConfettiSwiftUI */; };
-		4AF38651276BC212003E376A /* QuestionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF38650276BC212003E376A /* QuestionContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4A179002276CEED40025CE1B /* QuizGameSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameSearch.swift; sourceTree = "<group>"; };
-		4A179004276CF4390025CE1B /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		4A179006276CF52D0025CE1B /* QuizGameFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameFiltersView.swift; sourceTree = "<group>"; };
 		4A17900B276D18CE0025CE1B /* QuizGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGame.swift; sourceTree = "<group>"; };
 		4A17900E276D19610025CE1B /* QuestionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsManager.swift; sourceTree = "<group>"; };
@@ -61,7 +58,6 @@
 		4ADB72BF2769CB540091CAD1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTransparancy.swift; sourceTree = "<group>"; };
 		4AF38649276BABD6003E376A /* PopupHostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHostedViewController.swift; sourceTree = "<group>"; };
-		4AF38650276BC212003E376A /* QuestionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +133,6 @@
 				4ADB72BD2769CA620091CAD1 /* QuizGameView.swift */,
 				4A24A722276A5EC60068BFB7 /* DeckView.swift */,
 				4A24A732276A866B0068BFB7 /* AnswerEvaluationView.swift */,
-				4AF38650276BC212003E376A /* QuestionContentView.swift */,
-				4A179004276CF4390025CE1B /* QuestionsView.swift */,
 				4A179006276CF52D0025CE1B /* QuizGameFiltersView.swift */,
 			);
 			path = Views;
@@ -300,13 +294,11 @@
 				4ADB7297276938720091CAD1 /* Skillmprove.xcdatamodeld in Sources */,
 				4ADB7294276938720091CAD1 /* Persistence.swift in Sources */,
 				4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */,
-				4A179005276CF4390025CE1B /* QuestionsView.swift in Sources */,
 				4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */,
 				4ADB72C02769CB540091CAD1 /* Question.swift in Sources */,
 				4A17900C276D18CE0025CE1B /* QuizGame.swift in Sources */,
 				4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */,
 				4ADB72BE2769CA620091CAD1 /* QuizGameView.swift in Sources */,
-				4AF38651276BC212003E376A /* QuestionContentView.swift in Sources */,
 				4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */,
 				4A17900F276D19610025CE1B /* QuestionsManager.swift in Sources */,
 				4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */,
