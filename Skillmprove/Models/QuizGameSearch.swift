@@ -10,7 +10,7 @@ import CoreData
 
 struct QuizGameSearch: Equatable {
     var iOS: Bool = true
-    var uiKit: Bool = true
+    var uiKit: Bool = false
     var swiftUI: Bool = false
     var objC: Bool = false
     

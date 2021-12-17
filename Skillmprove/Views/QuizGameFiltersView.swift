@@ -10,7 +10,12 @@ import SwiftUI
 struct QuizGameFiltersView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var search: QuizGameSearch
-    @State private var draft = QuizGameSearch()
+    @State private var draft: QuizGameSearch
+    
+    init(search: Binding<QuizGameSearch>) {
+        self._search = search
+        self._draft = State(wrappedValue: search.wrappedValue)
+    }
     
     var body: some View {
         NavigationView {
