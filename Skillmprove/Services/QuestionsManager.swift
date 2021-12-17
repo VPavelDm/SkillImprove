@@ -11,7 +11,7 @@ import CoreData
 class QuestionsManager {
     func loadQuestions(search: QuizGameSearch) throws -> [Question] {
         let fetchRequest = Question.fetchRequest(search.predicate)
-        let context = PersistenceController.shared.container.viewContext
+        let context = PersistenceController.shared.mainContext
         return try context.fetch(fetchRequest)
     }
 }

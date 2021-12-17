@@ -11,6 +11,9 @@
 		4A179007276CF52D0025CE1B /* QuizGameFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A179006276CF52D0025CE1B /* QuizGameFiltersView.swift */; };
 		4A17900C276D18CE0025CE1B /* QuizGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17900B276D18CE0025CE1B /* QuizGame.swift */; };
 		4A17900F276D19610025CE1B /* QuestionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17900E276D19610025CE1B /* QuestionsManager.swift */; };
+		4A179015276D31700025CE1B /* Skillmprove.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4A179012276D31700025CE1B /* Skillmprove.sqlite */; };
+		4A179016276D31700025CE1B /* Skillmprove.sqlite-shm in Resources */ = {isa = PBXBuildFile; fileRef = 4A179013276D31700025CE1B /* Skillmprove.sqlite-shm */; };
+		4A179017276D31700025CE1B /* Skillmprove.sqlite-wal in Resources */ = {isa = PBXBuildFile; fileRef = 4A179014276D31700025CE1B /* Skillmprove.sqlite-wal */; };
 		4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A720276A4CC90068BFB7 /* Cardify.swift */; };
 		4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A722276A5EC60068BFB7 /* DeckView.swift */; };
 		4A24A731276A80F00068BFB7 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A730276A80F00068BFB7 /* PopupView.swift */; };
@@ -38,6 +41,9 @@
 		4A179006276CF52D0025CE1B /* QuizGameFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameFiltersView.swift; sourceTree = "<group>"; };
 		4A17900B276D18CE0025CE1B /* QuizGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGame.swift; sourceTree = "<group>"; };
 		4A17900E276D19610025CE1B /* QuestionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsManager.swift; sourceTree = "<group>"; };
+		4A179012276D31700025CE1B /* Skillmprove.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Skillmprove.sqlite; sourceTree = "<group>"; };
+		4A179013276D31700025CE1B /* Skillmprove.sqlite-shm */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Skillmprove.sqlite-shm"; sourceTree = "<group>"; };
+		4A179014276D31700025CE1B /* Skillmprove.sqlite-wal */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Skillmprove.sqlite-wal"; sourceTree = "<group>"; };
 		4A24A720276A4CC90068BFB7 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		4A24A722276A5EC60068BFB7 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		4A24A730276A80F00068BFB7 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
@@ -86,6 +92,16 @@
 				4A17900E276D19610025CE1B /* QuestionsManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		4A179011276D31650025CE1B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4A179012276D31700025CE1B /* Skillmprove.sqlite */,
+				4A179013276D31700025CE1B /* Skillmprove.sqlite-shm */,
+				4A179014276D31700025CE1B /* Skillmprove.sqlite-wal */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		4ADB727E276938710091CAD1 = {
@@ -141,6 +157,7 @@
 		4ADB729E27693B5C0091CAD1 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				4A179011276D31650025CE1B /* Data */,
 				4ADB7293276938720091CAD1 /* Persistence.swift */,
 				4ADB7295276938720091CAD1 /* Skillmprove.xcdatamodeld */,
 				4ADB72AF276945300091CAD1 /* Persistence+preview.swift */,
@@ -280,6 +297,9 @@
 			files = (
 				4ADB7292276938720091CAD1 /* Preview Assets.xcassets in Resources */,
 				4ADB72B22769454A0091CAD1 /* topics.json in Resources */,
+				4A179015276D31700025CE1B /* Skillmprove.sqlite in Resources */,
+				4A179017276D31700025CE1B /* Skillmprove.sqlite-wal in Resources */,
+				4A179016276D31700025CE1B /* Skillmprove.sqlite-shm in Resources */,
 				4ADB728F276938720091CAD1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

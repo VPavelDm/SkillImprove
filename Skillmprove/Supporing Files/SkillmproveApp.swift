@@ -12,7 +12,7 @@ struct SkillmproveApp: App {
     var body: some Scene {
         WindowGroup {
             QuizGameView(search: QuizGameSearch())
-                .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+                .environment(\.managedObjectContext, PersistenceController.shared.mainContext)
                 .preferredColorScheme(.dark)
                 .onAppear {
                     UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
