@@ -27,25 +27,16 @@ extension PersistenceController {
         }
         return result
     }()
-    static func loadPreviewRestaurant() -> Topic {
+    static func loadPreviewRestaurant() -> [Question] {
         let context = preview.container.viewContext
         let content: ContentTO = try! readJSON(path: "topics")
-        return map(from: content.topics.first!, in: context)
+        return map(from: content, in: context)
     }
 }
 
 // MARK: - TOs
 private struct ContentTO: Decodable {
-    var topics: [TopicTO]
-}
-private struct TopicTO: Decodable {
-    var title: String
-    var card: CardTO
     var questions: [QuestionTO]
-}
-private struct CardTO: Decodable {
-    var textColor: String
-    var backgroundColors: [String]
 }
 private struct QuestionTO: Decodable {
     var text: String
@@ -55,32 +46,13 @@ private struct QuestionTO: Decodable {
 
 // MARK: - Mapping
 extension PersistenceController {
-    private static func map(from object: ContentTO, in context: NSManagedObjectContext) -> [Topic] {
-        object.topics.map { map(from: $0, in: context) }
-    }
-    private static func map(from object: TopicTO, in context: NSManagedObjectContext) -> Topic {
-        let topic = Topic(context: context)
-        topic.title = object.title
-        topic.card = map(from: object.card, in: context)
-        topic.questions = object.questions.map { map(from: $0, in: context) }
-        return topic
-    }
-    private static func map(from object: CardTO, in context: NSManagedObjectContext) -> Card {
-        let card = Card(context: context)
-        card.textColor = Color(hex: object.textColor)
-        card.backgroundColors = object.backgroundColors.map { Color(hex: $0) }
-        return card
+    private static func map(from object: ContentTO, in context: NSManagedObjectContext) -> [Question] {
+        object.questions.map { map(from: $0, in: context) }
     }
     private static func map(from object: QuestionTO, in context: NSManagedObjectContext) -> Question {
         let question = Question(context: context)
         question.text = object.text
         question.correctAnswer = object.correctAnswer
-        question.answers = object.answers.map { map(from: $0, in: context) }
         return question
-    }
-    private static func map(from object: String, in context: NSManagedObjectContext) -> ChooseAnswer {
-        let answer = ChooseAnswer(context: context)
-        answer.text = object
-        return answer
     }
 }

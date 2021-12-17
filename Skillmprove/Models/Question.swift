@@ -17,8 +17,4 @@ extension Question {
         get { correctAnswer_! }
         set { correctAnswer_ = newValue }
     }
-    var answers: [ChooseAnswer] {
-        get { answers_!.toArray() }
-        set { answers_ = newValue.nsOrderedSet }
-    }
 }

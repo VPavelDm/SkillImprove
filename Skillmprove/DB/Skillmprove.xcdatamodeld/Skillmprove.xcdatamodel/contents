@@ -1,29 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Card" representedClassName="Card" syncable="YES" codeGenerationType="class">
-        <attribute name="backgroundColors_" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer"/>
-        <attribute name="textColor_" optional="YES" attributeType="String" valueTransformerName="NSSecureUnarchiveFromDataTransformer"/>
-        <relationship name="topic_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topic" inverseName="card_" inverseEntity="Topic"/>
-    </entity>
-    <entity name="ChooseAnswer" representedClassName="ChooseAnswer" syncable="YES" codeGenerationType="class">
-        <attribute name="text_" optional="YES" attributeType="String"/>
-        <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="answers_" inverseEntity="Question"/>
-    </entity>
     <entity name="Question" representedClassName="Question" syncable="YES" codeGenerationType="class">
         <attribute name="correctAnswer_" optional="YES" attributeType="String"/>
         <attribute name="text_" optional="YES" attributeType="String"/>
-        <relationship name="answers_" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ChooseAnswer" inverseName="question" inverseEntity="ChooseAnswer"/>
-        <relationship name="topic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Topic" inverseName="questions_" inverseEntity="Topic"/>
-    </entity>
-    <entity name="Topic" representedClassName="Topic" syncable="YES" codeGenerationType="class">
-        <attribute name="title_" optional="YES" attributeType="String"/>
-        <relationship name="card_" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="topic_" inverseEntity="Card"/>
-        <relationship name="questions_" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Question" inverseName="topic" inverseEntity="Question"/>
     </entity>
     <elements>
-        <element name="Card" positionX="-63" positionY="-9" width="128" height="74"/>
-        <element name="Question" positionX="-45" positionY="27" width="128" height="89"/>
-        <element name="Topic" positionX="-63" positionY="-18" width="128" height="74"/>
-        <element name="ChooseAnswer" positionX="-45" positionY="45" width="128" height="59"/>
+        <element name="Question" positionX="-45" positionY="27" width="128" height="59"/>
     </elements>
 </model>

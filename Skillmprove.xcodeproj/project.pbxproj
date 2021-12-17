@@ -9,22 +9,17 @@
 /* Begin PBXBuildFile section */
 		4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A720276A4CC90068BFB7 /* Cardify.swift */; };
 		4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A722276A5EC60068BFB7 /* DeckView.swift */; };
-		4A24A725276A67DC0068BFB7 /* ChooseAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A724276A67DC0068BFB7 /* ChooseAnswer.swift */; };
 		4A24A731276A80F00068BFB7 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A730276A80F00068BFB7 /* PopupView.swift */; };
 		4A24A733276A866B0068BFB7 /* AnswerEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A732276A866B0068BFB7 /* AnswerEvaluationView.swift */; };
 		4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728A276938710091CAD1 /* SkillmproveApp.swift */; };
-		4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB728C276938710091CAD1 /* TopicsView.swift */; };
 		4ADB728F276938720091CAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB728E276938720091CAD1 /* Assets.xcassets */; };
 		4ADB7292276938720091CAD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB7291276938720091CAD1 /* Preview Assets.xcassets */; };
 		4ADB7294276938720091CAD1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB7293276938720091CAD1 /* Persistence.swift */; };
 		4ADB7297276938720091CAD1 /* Skillmprove.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB7295276938720091CAD1 /* Skillmprove.xcdatamodeld */; };
-		4ADB72A127693BC60091CAD1 /* TopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72A027693BC60091CAD1 /* TopicView.swift */; };
 		4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72AA276943760091CAD1 /* CoreDataExtensions.swift */; };
-		4ADB72AE276943C60091CAD1 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72AD276943C60091CAD1 /* Topic.swift */; };
 		4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72AF276945300091CAD1 /* Persistence+preview.swift */; };
 		4ADB72B22769454A0091CAD1 /* topics.json in Resources */ = {isa = PBXBuildFile; fileRef = 4ADB72B12769454A0091CAD1 /* topics.json */; };
 		4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72B3276945860091CAD1 /* readJSON.swift */; };
-		4ADB72B7276947F20091CAD1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72B6276947F20091CAD1 /* Card.swift */; };
 		4ADB72B9276949830091CAD1 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72B8276949830091CAD1 /* UIKitExtensions.swift */; };
 		4ADB72BC27694BBC0091CAD1 /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BB27694BBC0091CAD1 /* SwiftUIExtensions.swift */; };
 		4ADB72BE2769CA620091CAD1 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BD2769CA620091CAD1 /* QuestionView.swift */; };
@@ -38,23 +33,18 @@
 /* Begin PBXFileReference section */
 		4A24A720276A4CC90068BFB7 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		4A24A722276A5EC60068BFB7 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
-		4A24A724276A67DC0068BFB7 /* ChooseAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAnswer.swift; sourceTree = "<group>"; };
 		4A24A730276A80F00068BFB7 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		4A24A732276A866B0068BFB7 /* AnswerEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerEvaluationView.swift; sourceTree = "<group>"; };
 		4ADB7287276938710091CAD1 /* Skillmprove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skillmprove.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ADB728A276938710091CAD1 /* SkillmproveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillmproveApp.swift; sourceTree = "<group>"; };
-		4ADB728C276938710091CAD1 /* TopicsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsView.swift; sourceTree = "<group>"; };
 		4ADB728E276938720091CAD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4ADB7291276938720091CAD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4ADB7293276938720091CAD1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4ADB7296276938720091CAD1 /* Skillmprove.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Skillmprove.xcdatamodel; sourceTree = "<group>"; };
-		4ADB72A027693BC60091CAD1 /* TopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicView.swift; sourceTree = "<group>"; };
 		4ADB72AA276943760091CAD1 /* CoreDataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExtensions.swift; sourceTree = "<group>"; };
-		4ADB72AD276943C60091CAD1 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		4ADB72AF276945300091CAD1 /* Persistence+preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+preview.swift"; sourceTree = "<group>"; };
 		4ADB72B12769454A0091CAD1 /* topics.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = topics.json; sourceTree = "<group>"; };
 		4ADB72B3276945860091CAD1 /* readJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readJSON.swift; sourceTree = "<group>"; };
-		4ADB72B6276947F20091CAD1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4ADB72B8276949830091CAD1 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		4ADB72BB27694BBC0091CAD1 /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
 		4ADB72BD2769CA620091CAD1 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
@@ -116,8 +106,6 @@
 		4ADB729D27693B530091CAD1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4ADB728C276938710091CAD1 /* TopicsView.swift */,
-				4ADB72A027693BC60091CAD1 /* TopicView.swift */,
 				4ADB72BD2769CA620091CAD1 /* QuestionView.swift */,
 				4A24A722276A5EC60068BFB7 /* DeckView.swift */,
 				4A24A732276A866B0068BFB7 /* AnswerEvaluationView.swift */,
@@ -149,10 +137,7 @@
 		4ADB72A427693CFF0091CAD1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4ADB72AD276943C60091CAD1 /* Topic.swift */,
-				4ADB72B6276947F20091CAD1 /* Card.swift */,
 				4ADB72BF2769CB540091CAD1 /* Question.swift */,
-				4A24A724276A67DC0068BFB7 /* ChooseAnswer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -283,11 +268,8 @@
 			files = (
 				4ADB7297276938720091CAD1 /* Skillmprove.xcdatamodeld in Sources */,
 				4ADB7294276938720091CAD1 /* Persistence.swift in Sources */,
-				4A24A725276A67DC0068BFB7 /* ChooseAnswer.swift in Sources */,
 				4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */,
-				4ADB728D276938710091CAD1 /* TopicsView.swift in Sources */,
 				4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */,
-				4ADB72AE276943C60091CAD1 /* Topic.swift in Sources */,
 				4ADB72C02769CB540091CAD1 /* Question.swift in Sources */,
 				4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */,
 				4ADB72BE2769CA620091CAD1 /* QuestionView.swift in Sources */,
@@ -295,14 +277,12 @@
 				4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */,
 				4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */,
 				4A24A731276A80F00068BFB7 /* PopupView.swift in Sources */,
-				4ADB72B7276947F20091CAD1 /* Card.swift in Sources */,
 				4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */,
 				4A24A733276A866B0068BFB7 /* AnswerEvaluationView.swift in Sources */,
 				4ADB72BC27694BBC0091CAD1 /* SwiftUIExtensions.swift in Sources */,
 				4ADB72B9276949830091CAD1 /* UIKitExtensions.swift in Sources */,
 				4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */,
 				4AF3864A276BABD6003E376A /* PopupHostedViewController.swift in Sources */,
-				4ADB72A127693BC60091CAD1 /* TopicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

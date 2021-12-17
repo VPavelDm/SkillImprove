@@ -50,13 +50,14 @@ struct QuestionView: View {
         )
     }
     var answers: some View {
-        LazyVGrid(columns: [.init(spacing: 2), .init()], spacing: 2) {
-            if let answers = currentQuestion?.answers {
-                ForEach(answers) { answer in
-                    answerButton(text: answer.text)
-                }
-            }
-        }
+        EmptyView()
+//        LazyVGrid(columns: [.init(spacing: 2), .init()], spacing: 2) {
+//            if let answers = currentQuestion?.answers {
+//                ForEach(answers) { answer in
+//                    answerButton(text: answer.text)
+//                }
+//            }
+//        }
     }
     func answerButton(text: String) -> some View {
         Button {
@@ -77,7 +78,7 @@ struct QuestionView: View {
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            QuestionView(questions: PersistenceController.loadPreviewRestaurant().questions)
+            QuestionView(questions: PersistenceController.loadPreviewRestaurant())
         }
     }
 }

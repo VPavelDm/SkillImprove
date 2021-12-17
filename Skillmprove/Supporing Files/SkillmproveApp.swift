@@ -13,7 +13,7 @@ struct SkillmproveApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TopicsView()
+            QuestionView(questions: [])
                 .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
                 .preferredColorScheme(.dark)
                 .onAppear {
