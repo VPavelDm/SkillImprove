@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A179003276CEED40025CE1B /* QuizGameSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A179002276CEED40025CE1B /* QuizGameSearch.swift */; };
 		4A179005276CF4390025CE1B /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A179004276CF4390025CE1B /* QuestionsView.swift */; };
+		4A179007276CF52D0025CE1B /* QuizGameFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A179006276CF52D0025CE1B /* QuizGameFiltersView.swift */; };
 		4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A720276A4CC90068BFB7 /* Cardify.swift */; };
 		4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A722276A5EC60068BFB7 /* DeckView.swift */; };
 		4A24A731276A80F00068BFB7 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A730276A80F00068BFB7 /* PopupView.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		4A179002276CEED40025CE1B /* QuizGameSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameSearch.swift; sourceTree = "<group>"; };
 		4A179004276CF4390025CE1B /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
+		4A179006276CF52D0025CE1B /* QuizGameFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameFiltersView.swift; sourceTree = "<group>"; };
 		4A24A720276A4CC90068BFB7 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		4A24A722276A5EC60068BFB7 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		4A24A730276A80F00068BFB7 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				4A24A732276A866B0068BFB7 /* AnswerEvaluationView.swift */,
 				4AF38650276BC212003E376A /* QuestionContentView.swift */,
 				4A179004276CF4390025CE1B /* QuestionsView.swift */,
+				4A179006276CF52D0025CE1B /* QuizGameFiltersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				4ADB72B9276949830091CAD1 /* UIKitExtensions.swift in Sources */,
 				4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */,
 				4AF3864A276BABD6003E376A /* PopupHostedViewController.swift in Sources */,
+				4A179007276CF52D0025CE1B /* QuizGameFiltersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

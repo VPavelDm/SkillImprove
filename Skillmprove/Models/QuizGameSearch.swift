@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-struct QuizGameSearch {
+struct QuizGameSearch: Equatable {
     var filters: [String] = []
     
     var predicate: NSPredicate {

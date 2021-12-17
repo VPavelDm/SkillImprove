@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct QuizGameView: View {
+    @State private var shouldShowFilters = false
     @State var search: QuizGameSearch
     @FetchRequest private var questions: FetchedResults<Question>
     
@@ -20,18 +21,34 @@ struct QuizGameView: View {
     
     // MARK: - Views
     var body: some View {
-        QuestionsView(questions.shuffled())
-            .background(
-                LinearGradient(colors: [.purple, .cyan], startPoint: .top, endPoint: .bottom)
-            )
-            .navigationBarTitleDisplayMode(.inline)
+        NavigationView {
+            QuestionsView(questions.shuffled())
+                .background(
+                    LinearGradient(colors: [.purple, .cyan], startPoint: .top, endPoint: .bottom)
+                )
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            shouldShowFilters = true
+                        } label: {
+                            Image(systemName: "line.3.horizontal.decrease.circle")
+                                .foregroundColor(.white)
+                        }
+                    }
+                }
+                .onChange(of: search) { newSearch in
+                    questions.nsPredicate = newSearch.predicate
+                }
+                .sheet(isPresented: $shouldShowFilters) {
+                    QuizGameFiltersView(search: $search)
+                }
+        }
     }
 }
 
 struct QuizGameView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            QuizGameView(QuizGameSearch())
-        }
+        QuizGameView(QuizGameSearch())
     }
 }
