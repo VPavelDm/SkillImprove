@@ -28,10 +28,10 @@ struct QuestionView: View {
     }
     var content: some View {
         VStack {
-            DeckView(cards: (1...10).map { "\($0)" }) {
-                
-            } content: { card in
-                Text(card)
+            DeckView(cards: questions) {
+                questions.removeLast()
+            } content: { question in
+                Text(question.text)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .aspectRatio(1.0, contentMode: .fit)
                     .background(Color.white)
