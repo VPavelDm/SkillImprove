@@ -32,11 +32,7 @@ struct QuestionView: View {
                 questions.removeLast()
             } content: { question in
                 Text(question.text)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .aspectRatio(1.0, contentMode: .fit)
-                    .background(Color.white)
-                    .cornerRadius(16)
-                    .shadow(radius: 5)
+                    .cardify()
             }
             .padding()
             Spacer()

@@ -21,8 +21,7 @@ struct QuestionContentView: View {
 struct QuestionContentView_Previews: PreviewProvider {
     static var previews: some View {
         QuestionContentView(text: "Very long text. ====================================")
-            .cardify {
-            }
+            .cardify()
             .padding()
             .background(
                 LinearGradient(colors: [.purple, .cyan],
