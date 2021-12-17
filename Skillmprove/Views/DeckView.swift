@@ -7,39 +7,62 @@
 
 import SwiftUI
 
-struct DeckView: View {
-    @Binding var questions: [Question]
-    
+struct DeckView<Card, Item>: View where Card: View {
+    var cards: [Item]
+    var content: (Item) -> Card
+        
     // MARK: - Views
     var body: some View {
         ZStack {
-            ForEach(questions.indices, id: \.self) { index in
-                QuestionContentView(text: questions[index].text)
-                    .cardify {
-                        questions.remove(at: index)
-                    }
-                    .offset(x: questionCardOffset(for: index),
-                            y: -questionCardOffset(for: index))
-                    .opacity(isQuestionCardVisible(for: index) ? 1 : 0)
+            ForEach(cards.indices, id: \.self) { index in
+                content(cards[index])
                     .zIndex(Double(index))
+                    .opacity(isCardVisible(at: index) ? 1 : 0)
+                    .offset(x: 0, y: offset(at: index))
+                    .scaleEffect(scale(at: index))
             }
         }
     }
     
     // MARK: - UI Utils
-    func questionCardOffset(for index: Int) -> Double {
-        if isQuestionCardVisible(for: index) {
-            return Double((questions.count - 1 - index) * cardOffsetFactor)
+    private func offset(at index: Int) -> Double {
+        if isCardVisible(at: index) {
+            return Double((cards.count - 1 - index) * -13)
         } else {
-            return questionCardOffset(for: questions.count - visibleCardsCount)
+            return offset(at: index + 1)
         }
     }
-    func isQuestionCardVisible(for index: Int) -> Bool {
-        questions.count <= visibleCardsCount || index >= questions.count - visibleCardsCount
+    private func scale(at index: Int) -> Double {
+        1 - Double(cards.count - 1 - index) * 0.02
+    }
+    func isCardVisible(at index: Int) -> Bool {
+        cards.count <= visibleCardsCount || index >= cards.count - visibleCardsCount
     }
     
-    // MARK: - UI Constants
+    // MARK: - Constants
     private let visibleCardsCount = 3
-    private let cardOffsetFactor = 5
 }
 
+struct DeckView_Previews: PreviewProvider {
+    private struct ContentView: View {
+        var cards = (1...10).map { "\($0)" }
+        
+        var body: some View {
+            ZStack {
+                Color.red.ignoresSafeArea()
+                DeckView(cards: cards) { card in
+                    Text(card)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .aspectRatio(1.0, contentMode: .fit)
+                        .background(Color.white)
+                        .cornerRadius(16)
+                        .shadow(radius: 5)
+                }
+                .padding()
+            }
+        }
+    }
+    static var previews: some View {
+        ContentView()
+    }
+}

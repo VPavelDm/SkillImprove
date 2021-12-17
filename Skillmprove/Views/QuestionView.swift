@@ -28,8 +28,15 @@ struct QuestionView: View {
     }
     var content: some View {
         VStack {
-            DeckView(questions: $questions)
-                .padding()
+            DeckView(cards: (1...10).map { "\($0)" }) { card in
+                Text(card)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .aspectRatio(1.0, contentMode: .fit)
+                    .background(Color.white)
+                    .cornerRadius(16)
+                    .shadow(radius: 5)
+            }
+            .padding()
             Spacer()
             answers
         }
