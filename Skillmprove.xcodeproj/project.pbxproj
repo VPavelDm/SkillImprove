@@ -10,6 +10,8 @@
 		4A179003276CEED40025CE1B /* QuizGameSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A179002276CEED40025CE1B /* QuizGameSearch.swift */; };
 		4A179005276CF4390025CE1B /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A179004276CF4390025CE1B /* QuestionsView.swift */; };
 		4A179007276CF52D0025CE1B /* QuizGameFiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A179006276CF52D0025CE1B /* QuizGameFiltersView.swift */; };
+		4A17900C276D18CE0025CE1B /* QuizGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17900B276D18CE0025CE1B /* QuizGame.swift */; };
+		4A17900F276D19610025CE1B /* QuestionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A17900E276D19610025CE1B /* QuestionsManager.swift */; };
 		4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A720276A4CC90068BFB7 /* Cardify.swift */; };
 		4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A722276A5EC60068BFB7 /* DeckView.swift */; };
 		4A24A731276A80F00068BFB7 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A730276A80F00068BFB7 /* PopupView.swift */; };
@@ -37,6 +39,8 @@
 		4A179002276CEED40025CE1B /* QuizGameSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameSearch.swift; sourceTree = "<group>"; };
 		4A179004276CF4390025CE1B /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		4A179006276CF52D0025CE1B /* QuizGameFiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameFiltersView.swift; sourceTree = "<group>"; };
+		4A17900B276D18CE0025CE1B /* QuizGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGame.swift; sourceTree = "<group>"; };
+		4A17900E276D19610025CE1B /* QuestionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsManager.swift; sourceTree = "<group>"; };
 		4A24A720276A4CC90068BFB7 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		4A24A722276A5EC60068BFB7 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		4A24A730276A80F00068BFB7 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
@@ -72,6 +76,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A17900A276D18C40025CE1B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A17900B276D18CE0025CE1B /* QuizGame.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4A17900D276D194C0025CE1B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4A17900E276D19610025CE1B /* QuestionsManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		4ADB727E276938710091CAD1 = {
 			isa = PBXGroup;
 			children = (
@@ -93,10 +113,12 @@
 			children = (
 				4ADB72A82769436B0091CAD1 /* Core */,
 				4ADB729E27693B5C0091CAD1 /* DB */,
-				4ADB72A427693CFF0091CAD1 /* Models */,
 				4ADB7290276938720091CAD1 /* Preview Content */,
 				4ADB729F27693B670091CAD1 /* Supporing Files */,
+				4A17900D276D194C0025CE1B /* Services */,
+				4ADB72A427693CFF0091CAD1 /* Models */,
 				4ADB729D27693B530091CAD1 /* Views */,
+				4A17900A276D18C40025CE1B /* ViewModel */,
 			);
 			path = Skillmprove;
 			sourceTree = "<group>";
@@ -281,10 +303,12 @@
 				4A179005276CF4390025CE1B /* QuestionsView.swift in Sources */,
 				4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */,
 				4ADB72C02769CB540091CAD1 /* Question.swift in Sources */,
+				4A17900C276D18CE0025CE1B /* QuizGame.swift in Sources */,
 				4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */,
 				4ADB72BE2769CA620091CAD1 /* QuizGameView.swift in Sources */,
 				4AF38651276BC212003E376A /* QuestionContentView.swift in Sources */,
 				4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */,
+				4A17900F276D19610025CE1B /* QuestionsManager.swift in Sources */,
 				4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */,
 				4A24A731276A80F00068BFB7 /* PopupView.swift in Sources */,
 				4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */,

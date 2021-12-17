@@ -8,12 +8,7 @@
 import SwiftUI
 
 struct QuestionsView: View {
-    @State private var questions: [Question]
-    
-    // MARK: - Inits
-    init(_ questions: [Question]) {
-        self._questions = State(initialValue: questions)
-    }
+    @Binding var questions: [Question]
     
     // MARK: - Views
     var body: some View {
