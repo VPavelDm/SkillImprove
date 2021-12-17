@@ -28,7 +28,9 @@ struct QuestionView: View {
     }
     var content: some View {
         VStack {
-            DeckView(cards: (1...10).map { "\($0)" }) { card in
+            DeckView(cards: (1...10).map { "\($0)" }) {
+                
+            } content: { card in
                 Text(card)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .aspectRatio(1.0, contentMode: .fit)

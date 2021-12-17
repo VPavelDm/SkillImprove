@@ -10,32 +10,44 @@ import SwiftUI
 struct DeckView<Card, Item>: View where Card: View {
     @State private var topCardOffset: CGSize = .zero
     var cards: [Item]
+    var onRemove: () -> Void
     var content: (Item) -> Card
-        
+    
     // MARK: - Views
     var body: some View {
-        ZStack {
-            ForEach(cards.indices, id: \.self) { index in
-                content(cards[index])
-                    .zIndex(Double(index))
-                    .opacity(isCardVisible(at: index) ? 1 : 0)
-                    .offset(x: dragOffset(at: index).width, y: dragOffset(at: index).height)
-                    .offset(x: 0, y: offset(at: index))
-                    .scaleEffect(scale(at: index))
-                    .rotationEffect(dragRotation(at: index))
-                    .gesture(
-                        DragGesture()
-                            .onChanged { value in
-                                topCardOffset = value.translation
-                            }
-                            .onEnded { value in
-                                withAnimation {
-                                    topCardOffset = .zero
+        GeometryReader { geometry in
+            ZStack {
+                ForEach(cards.indices, id: \.self) { index in
+                    content(cards[index])
+                        .zIndex(Double(index))
+                        .opacity(isCardVisible(at: index) ? 1 : 0)
+                        .offset(x: dragOffset(at: index).width, y: dragOffset(at: index).height)
+                        .offset(x: 0, y: offset(at: index))
+                        .scaleEffect(scale(at: index))
+                        .rotationEffect(dragRotation(at: index))
+                        .gesture(
+                            DragGesture()
+                                .onChanged { value in
+                                    topCardOffset = value.translation
                                 }
-                            }
-                    )
+                                .onEnded { value in
+                                    withAnimation {
+                                        if abs(gesturePercentage(geometry, from: value)) > thresholdPercentage {
+                                            onRemove()
+                                        }
+                                        topCardOffset = .zero
+                                    }
+                                }
+                        )
+                        .transition(.asymmetric(insertion: .identity, removal: .move(edge: .leading)))
+                }
             }
         }
+    }
+    
+    // MARK: - Utils
+    private func gesturePercentage(_ geometry: GeometryProxy, from gesture: DragGesture.Value) -> CGFloat {
+        gesture.translation.width / geometry.size.width
     }
     
     // MARK: - UI Utils
@@ -63,16 +75,19 @@ struct DeckView<Card, Item>: View where Card: View {
     
     // MARK: - Constants
     private let visibleCardsCount = 3
+    private let thresholdPercentage: Double = 0.5
 }
 
 struct DeckView_Previews: PreviewProvider {
     private struct ContentView: View {
-        var cards = (1...10).map { "\($0)" }
+        @State var cards = (1...10).map { "\($0)" }
         
         var body: some View {
             ZStack {
                 Color.red.ignoresSafeArea()
-                DeckView(cards: cards) { card in
+                DeckView(cards: cards) {
+                    cards.removeLast()
+                } content: { card in
                     Text(card)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .aspectRatio(1.0, contentMode: .fit)
