@@ -41,7 +41,6 @@ private struct ContentTO: Decodable {
 private struct QuestionTO: Decodable {
     var text: String
     var correctAnswer: String
-    var answers: [String]
 }
 
 // MARK: - Mapping

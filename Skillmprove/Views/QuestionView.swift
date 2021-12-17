@@ -25,18 +25,6 @@ struct QuestionView: View {
     // MARK: - Views
     var body: some View {
         content
-            .navigationBarTitleDisplayMode(.inline)
-            .popup(isPresented: $shouldShowAlert) {
-                if let isAnswerCorrect = isAnswerCorrect {
-                    AnswerEvaluationView(isPresented: $shouldShowAlert,
-                                         answerType: isAnswerCorrect ? .correct : .wrong)
-                }
-            }
-            .onChange(of: shouldShowAlert) { isAlertVisible in
-                if !isAlertVisible && isAnswerCorrect ?? false {
-                    questions.remove(at: questions.count - 1)
-                }
-            }
     }
     var content: some View {
         VStack {

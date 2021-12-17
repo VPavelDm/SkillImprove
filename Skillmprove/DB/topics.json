@@ -1,90 +1,23 @@
 {
-    "topics": [
+    "questions": [
         {
-            "title": "Swift",
-            "card": {
-                "textColor": "#ffffff",
-                "backgroundColors": ["ffffff", "ffffff"]
-            },
-            "questions": [
-                {
-                    "text": "How is a dictionary different from an array?",
-                    "correctAnswer": "1",
-                    "answers": []
-                }, {
-                    "text": "What are tuples and why are they useful?",
-                    "correctAnswer": "2",
-                    "answers": []
-                }, {
-                    "text": "How would you round the corners of one of your views?",
-                    "correctAnswer": "view.layer.cornerRadius",
-                    "answers": ["view.layer.cornerRadius", "view.cornerRadius", "view.ratius", "view.layer.cornerRadius"]
-                }, {
-                    "text": "What operators would you use to resolve a retain cycle?",
-                    "correctAnswer": "unowned",
-                    "answers": ["unowned", "default", "continue", "weakReference"]
-                }, {
-                    "text": "What is the difference between if let and guard let?",
-                    "correctAnswer": "5",
-                    "answers": []
-                }, {
-                    "text": "What does the #available syntax do?",
-                    "correctAnswer": "22",
-                    "answers": []
-                }
-            ]
+            "text": "How is a dictionary different from an array?",
+            "correctAnswer": "1"
         }, {
-            "title": "UIKit",
-            "card": {
-                "textColor": "#ffffff",
-                "backgroundColors": ["ffffff", "ffffff"]
-            },
-            "questions": [
-                {
-                    "text": "Чему равен 2+2",
-                    "correctAnswer": "2",
-                    "answers": ["1", "2", "3", "4"]
-                }
-            ]
+            "text": "What are tuples and why are they useful?",
+            "correctAnswer": "2"
         }, {
-            "title": "Concurrency",
-            "card": {
-                "textColor": "#ffffff",
-                "backgroundColors": ["ffffff", "ffffff"]
-            },
-            "questions": [
-                {
-                    "text": "Чему равен 2+2",
-                    "correctAnswer": "2",
-                    "answers": ["1", "2", "3", "4"]
-                }
-            ]
+            "text": "How would you round the corners of one of your views?",
+            "correctAnswer": "view.layer.cornerRadius"
         }, {
-            "title": "Animation",
-            "card": {
-                "textColor": "#ffffff",
-                "backgroundColors": ["ffffff", "ffffff"]
-            },
-            "questions": [
-                {
-                    "text": "Чему равен 2+2",
-                    "correctAnswer": "2",
-                    "answers": ["1", "2", "3", "4"]
-                }
-            ]
+            "text": "What operators would you use to resolve a retain cycle?",
+            "correctAnswer": "unowned"
         }, {
-            "title": "SwiftUI",
-            "card": {
-                "textColor": "#ffffff",
-                "backgroundColors": ["ffffff", "ffffff"]
-            },
-            "questions": [
-                {
-                    "text": "Чему равен 2+2",
-                    "correctAnswer": "2",
-                    "answers": ["1", "2", "3", "4"]
-                }
-            ]
+            "text": "What is the difference between if let and guard let?",
+            "correctAnswer": "5"
+        }, {
+            "text": "What does the #available syntax do?",
+            "correctAnswer": "22"
         }
     ]
 }
