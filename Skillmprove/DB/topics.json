@@ -2,22 +2,28 @@
     "questions": [
         {
             "text": "How is a dictionary different from an array?",
-            "correctAnswer": "1"
+            "correctAnswer": "1",
+            "category": "iOS"
         }, {
             "text": "What are tuples and why are they useful?",
-            "correctAnswer": "2"
+            "correctAnswer": "2",
+            "category": "SwiftUI"
         }, {
             "text": "How would you round the corners of one of your views?",
-            "correctAnswer": "view.layer.cornerRadius"
+            "correctAnswer": "view.layer.cornerRadius",
+            "category": "UIKit"
         }, {
             "text": "What operators would you use to resolve a retain cycle?",
-            "correctAnswer": "unowned"
+            "correctAnswer": "unowned",
+            "category": "Objective-C"
         }, {
             "text": "What is the difference between if let and guard let?",
-            "correctAnswer": "5"
+            "correctAnswer": "5",
+            "category": "SwiftUI"
         }, {
             "text": "What does the #available syntax do?",
-            "correctAnswer": "22"
+            "correctAnswer": "22",
+            "category": "iOS"
         }
     ]
 }

@@ -10,10 +10,11 @@ import SwiftUI
 struct QuizGameFiltersView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var search: QuizGameSearch
+    @State private var draft = QuizGameSearch()
     
     var body: some View {
         NavigationView {
-            Text("Hello, World!")
+            content
                 .navigationTitle("Filters")
                 .navigationBarTitleDisplayMode(.inline)
                 .disableNavigationBarTransparancy()
@@ -22,14 +23,32 @@ struct QuizGameFiltersView: View {
                     LinearGradient(colors: [.purple, .cyan], startPoint: .top, endPoint: .bottom)
                 )
                 .toolbar {
-                    ToolbarItem(placement: .cancellationAction) {
-                        Button {
-                            presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Text("Cancel")
-                        }
-                    }
+                    ToolbarItem(placement: .cancellationAction) { cancel }
+                    ToolbarItem(placement: .confirmationAction) { apply }
                 }
+        }
+    }
+    var content: some View {
+        Form {
+            Toggle("Swift", isOn: $draft.iOS)
+            Toggle("UIKit", isOn: $draft.uiKit)
+            Toggle("SwiftUI", isOn: $draft.swiftUI)
+            Toggle("Obj-C", isOn: $draft.objC)
+        }
+    }
+    var cancel: some View {
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            Text("Cancel")
+        }
+    }
+    var apply: some View {
+        Button {
+            search = draft
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            Text("Apply")
         }
     }
 }
@@ -39,5 +58,6 @@ struct QuizGameFiltersView_Previews: PreviewProvider {
         NavigationView {
             QuizGameFiltersView(search: .constant(QuizGameSearch()))
         }
+        .preferredColorScheme(.dark)
     }
 }
