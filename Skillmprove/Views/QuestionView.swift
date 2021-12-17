@@ -36,36 +36,12 @@ struct QuestionView: View {
             }
             .padding()
             Spacer()
-            answers
         }
         .background(
             LinearGradient(colors: [.purple, .cyan], startPoint: .top, endPoint: .bottom)
         )
+        .navigationBarTitleDisplayMode(.inline)
     }
-    var answers: some View {
-        EmptyView()
-//        LazyVGrid(columns: [.init(spacing: 2), .init()], spacing: 2) {
-//            if let answers = currentQuestion?.answers {
-//                ForEach(answers) { answer in
-//                    answerButton(text: answer.text)
-//                }
-//            }
-//        }
-    }
-    func answerButton(text: String) -> some View {
-        Button {
-            isAnswerCorrect = currentQuestion?.correctAnswer == text
-            shouldShowAlert = true
-        } label: {
-            Text(text)
-                .fontWeight(.medium)
-                .frame(maxWidth: .infinity)
-                .foregroundColor(.white)
-                .padding(.vertical, 20)
-                .background(Color.purple.opacity(0.5))
-        }
-    }
-        
 }
 
 struct QuestionView_Previews: PreviewProvider {
