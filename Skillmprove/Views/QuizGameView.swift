@@ -7,22 +7,13 @@
 
 import SwiftUI
 
-struct QuizGameView: View {
+struct ContentView: View {
     @State private var shouldShowFilters = false
     @State var search: QuizGameSearch
-    @FetchRequest private var questions: FetchedResults<Question>
     
-    // MARK: - Inits
-    init(_ search: QuizGameSearch) {
-        self._search = State(initialValue: search)
-        let request = Question.fetchRequest(search.predicate)
-        self._questions = FetchRequest(fetchRequest: request)
-    }
-    
-    // MARK: - Views
     var body: some View {
         NavigationView {
-            QuestionsView(questions.shuffled())
+            QuizGameView(search)
                 .background(
                     LinearGradient(colors: [.purple, .cyan], startPoint: .top, endPoint: .bottom)
                 )
@@ -37,13 +28,31 @@ struct QuizGameView: View {
                         }
                     }
                 }
-                .onChange(of: search) { newSearch in
-                    questions.nsPredicate = newSearch.predicate
-                }
                 .sheet(isPresented: $shouldShowFilters) {
                     QuizGameFiltersView(search: $search)
                 }
         }
+    }
+}
+
+struct QuizGameView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest private var questions: FetchedResults<Question>
+    
+    // MARK: - Inits
+    init(_ search: QuizGameSearch) {
+        let request = Question.fetchRequest(search.predicate)
+        self._questions = FetchRequest(fetchRequest: request)
+    }
+    
+    // MARK: - Views
+    var body: some View {
+//        VStack(spacing: 16) {
+//            ForEach(questions) { question in
+//                Text(question.text)
+//            }
+//        }
+        QuestionsView(questions.shuffled())
     }
 }
 

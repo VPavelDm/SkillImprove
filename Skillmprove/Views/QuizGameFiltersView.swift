@@ -30,7 +30,7 @@ struct QuizGameFiltersView: View {
     }
     var content: some View {
         Form {
-            Toggle("Swift", isOn: $draft.iOS)
+            Toggle("iOS", isOn: $draft.iOS)
             Toggle("UIKit", isOn: $draft.uiKit)
             Toggle("SwiftUI", isOn: $draft.swiftUI)
             Toggle("Obj-C", isOn: $draft.objC)

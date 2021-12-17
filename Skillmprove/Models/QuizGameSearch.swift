@@ -9,8 +9,8 @@ import Foundation
 import CoreData
 
 struct QuizGameSearch: Equatable {
-    var iOS: Bool = false
-    var uiKit: Bool = false
+    var iOS: Bool = true
+    var uiKit: Bool = true
     var swiftUI: Bool = false
     var objC: Bool = false
     
@@ -33,7 +33,7 @@ struct QuizGameSearch: Equatable {
             formatComponents.append("category_ CONTAINS %@")
             args.append("Objective-C")
         }
-        let format = formatComponents.joined(separator: " and ")
+        let format = formatComponents.joined(separator: " or ")
         return format.isEmpty ? .all : NSPredicate(format: format, argumentArray: args)
     }
 }
