@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DeckView<Card, Item>: View where Card: View {
     @State private var topCardOffset: CGSize = .zero
+    @State private var draggableCardIndex: Int?
     var cards: [Item]
     var onRemove: () -> Void
     var content: (Item) -> Card
@@ -28,6 +29,7 @@ struct DeckView<Card, Item>: View where Card: View {
                         .gesture(
                             DragGesture()
                                 .onChanged { value in
+                                    draggableCardIndex = cards.count - 1
                                     topCardOffset = value.translation
                                 }
                                 .onEnded { value in
@@ -35,11 +37,12 @@ struct DeckView<Card, Item>: View where Card: View {
                                         if abs(gesturePercentage(geometry, from: value)) > thresholdPercentage {
                                             onRemove()
                                         }
+                                        draggableCardIndex = nil
                                         topCardOffset = .zero
                                     }
                                 }
                         )
-                        .transition(.asymmetric(insertion: .identity, removal: .move(edge: .leading)))
+                        .transition(removeTransition)
                 }
             }
         }
@@ -52,11 +55,11 @@ struct DeckView<Card, Item>: View where Card: View {
     
     // MARK: - UI Utils
     private func dragRotation(at index: Int) -> Angle {
-        guard index == cards.count - 1 else { return .zero }
+        guard index == draggableCardIndex else { return .zero }
         return .degrees(topCardOffset.width / 20)
     }
     private func dragOffset(at index: Int) -> CGSize {
-        guard index == cards.count - 1 else { return .zero }
+        guard index == draggableCardIndex else { return .zero }
         return topCardOffset
     }
     private func offset(at index: Int) -> Double {
@@ -76,6 +79,10 @@ struct DeckView<Card, Item>: View where Card: View {
     // MARK: - Constants
     private let visibleCardsCount = 3
     private let thresholdPercentage: Double = 0.5
+    private var removeTransition: AnyTransition {
+        .move(edge: .bottom)
+        .combined(with: .move(edge: topCardOffset.width < 0 ? .leading : .trailing))
+    }
 }
 
 struct DeckView_Previews: PreviewProvider {
