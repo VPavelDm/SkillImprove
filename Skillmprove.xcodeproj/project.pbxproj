@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A179003276CEED40025CE1B /* QuizGameSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A179002276CEED40025CE1B /* QuizGameSearch.swift */; };
 		4A24A721276A4CC90068BFB7 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A720276A4CC90068BFB7 /* Cardify.swift */; };
 		4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A722276A5EC60068BFB7 /* DeckView.swift */; };
 		4A24A731276A80F00068BFB7 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A24A730276A80F00068BFB7 /* PopupView.swift */; };
@@ -22,7 +23,7 @@
 		4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72B3276945860091CAD1 /* readJSON.swift */; };
 		4ADB72B9276949830091CAD1 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72B8276949830091CAD1 /* UIKitExtensions.swift */; };
 		4ADB72BC27694BBC0091CAD1 /* SwiftUIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BB27694BBC0091CAD1 /* SwiftUIExtensions.swift */; };
-		4ADB72BE2769CA620091CAD1 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BD2769CA620091CAD1 /* QuestionView.swift */; };
+		4ADB72BE2769CA620091CAD1 /* QuizGameStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BD2769CA620091CAD1 /* QuizGameStorageView.swift */; };
 		4ADB72C02769CB540091CAD1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72BF2769CB540091CAD1 /* Question.swift */; };
 		4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */; };
 		4AF3864A276BABD6003E376A /* PopupHostedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF38649276BABD6003E376A /* PopupHostedViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A179002276CEED40025CE1B /* QuizGameSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameSearch.swift; sourceTree = "<group>"; };
 		4A24A720276A4CC90068BFB7 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		4A24A722276A5EC60068BFB7 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		4A24A730276A80F00068BFB7 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
@@ -47,7 +49,7 @@
 		4ADB72B3276945860091CAD1 /* readJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = readJSON.swift; sourceTree = "<group>"; };
 		4ADB72B8276949830091CAD1 /* UIKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		4ADB72BB27694BBC0091CAD1 /* SwiftUIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIExtensions.swift; sourceTree = "<group>"; };
-		4ADB72BD2769CA620091CAD1 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		4ADB72BD2769CA620091CAD1 /* QuizGameStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGameStorageView.swift; sourceTree = "<group>"; };
 		4ADB72BF2769CB540091CAD1 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTransparancy.swift; sourceTree = "<group>"; };
 		4AF38649276BABD6003E376A /* PopupHostedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHostedViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 		4ADB729D27693B530091CAD1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4ADB72BD2769CA620091CAD1 /* QuestionView.swift */,
+				4ADB72BD2769CA620091CAD1 /* QuizGameStorageView.swift */,
 				4A24A722276A5EC60068BFB7 /* DeckView.swift */,
 				4A24A732276A866B0068BFB7 /* AnswerEvaluationView.swift */,
 				4AF38650276BC212003E376A /* QuestionContentView.swift */,
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				4ADB72BF2769CB540091CAD1 /* Question.swift */,
+				4A179002276CEED40025CE1B /* QuizGameSearch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,7 +275,7 @@
 				4ADB728B276938710091CAD1 /* SkillmproveApp.swift in Sources */,
 				4ADB72C02769CB540091CAD1 /* Question.swift in Sources */,
 				4ADB72B4276945860091CAD1 /* readJSON.swift in Sources */,
-				4ADB72BE2769CA620091CAD1 /* QuestionView.swift in Sources */,
+				4ADB72BE2769CA620091CAD1 /* QuizGameStorageView.swift in Sources */,
 				4AF38651276BC212003E376A /* QuestionContentView.swift in Sources */,
 				4ADB72C32769DC1F0091CAD1 /* NavigationBarTransparancy.swift in Sources */,
 				4ADB72AB276943760091CAD1 /* CoreDataExtensions.swift in Sources */,
@@ -280,6 +283,7 @@
 				4ADB72B0276945300091CAD1 /* Persistence+preview.swift in Sources */,
 				4A24A733276A866B0068BFB7 /* AnswerEvaluationView.swift in Sources */,
 				4ADB72BC27694BBC0091CAD1 /* SwiftUIExtensions.swift in Sources */,
+				4A179003276CEED40025CE1B /* QuizGameSearch.swift in Sources */,
 				4ADB72B9276949830091CAD1 /* UIKitExtensions.swift in Sources */,
 				4A24A723276A5EC60068BFB7 /* DeckView.swift in Sources */,
 				4AF3864A276BABD6003E376A /* PopupHostedViewController.swift in Sources */,

@@ -17,4 +17,12 @@ extension Question {
         get { correctAnswer_! }
         set { correctAnswer_ = newValue }
     }
+    
+    // MARK: - Requests
+    static func fetchRequest(_ predicate: NSPredicate) -> NSFetchRequest<Question> {
+        let request = NSFetchRequest<Question>(entityName: "Question")
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Question.text_, ascending: true)]
+        request.predicate = predicate
+        return request
+    }
 }
