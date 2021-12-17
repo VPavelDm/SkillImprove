@@ -4,40 +4,40 @@
             "title": "Swift",
             "card": {
                 "textColor": "#ffffff",
-                "backgroundColors": ["34c759", "ffcc00"]
+                "backgroundColors": ["ffffff", "ffffff"]
             },
             "questions": [
                 {
-                    "text": "1",
+                    "text": "How is a dictionary different from an array?",
                     "correctAnswer": "1",
-                    "answers": ["1", "2", "3", "4"]
+                    "answers": []
                 }, {
-                    "text": "2",
+                    "text": "What are tuples and why are they useful?",
                     "correctAnswer": "2",
-                    "answers": ["5", "6", "7", "8"]
+                    "answers": []
                 }, {
-                    "text": "3",
-                    "correctAnswer": "3",
-                    "answers": ["9", "10", "11", "12"]
+                    "text": "How would you round the corners of one of your views?",
+                    "correctAnswer": "view.layer.cornerRadius",
+                    "answers": ["view.layer.cornerRadius", "view.cornerRadius", "view.ratius", "view.layer.cornerRadius"]
                 }, {
-                    "text": "4",
-                    "correctAnswer": "4",
-                    "answers": ["13", "14", "15", "16"]
+                    "text": "What operators would you use to resolve a retain cycle?",
+                    "correctAnswer": "unowned",
+                    "answers": ["unowned", "default", "continue", "weakReference"]
                 }, {
-                    "text": "5",
+                    "text": "What is the difference between if let and guard let?",
                     "correctAnswer": "5",
-                    "answers": ["17", "18", "19", "20"]
+                    "answers": []
                 }, {
-                    "text": "6",
+                    "text": "What does the #available syntax do?",
                     "correctAnswer": "22",
-                    "answers": ["21", "22", "23", "24"]
+                    "answers": []
                 }
             ]
         }, {
             "title": "UIKit",
             "card": {
                 "textColor": "#ffffff",
-                "backgroundColors": ["ff3b30", "007aff"]
+                "backgroundColors": ["ffffff", "ffffff"]
             },
             "questions": [
                 {
@@ -50,7 +50,7 @@
             "title": "Concurrency",
             "card": {
                 "textColor": "#ffffff",
-                "backgroundColors": ["30b0c7", "ff2d54"]
+                "backgroundColors": ["ffffff", "ffffff"]
             },
             "questions": [
                 {
@@ -63,7 +63,7 @@
             "title": "Animation",
             "card": {
                 "textColor": "#ffffff",
-                "backgroundColors": ["00c7bd", "34c759"]
+                "backgroundColors": ["ffffff", "ffffff"]
             },
             "questions": [
                 {
@@ -76,7 +76,7 @@
             "title": "SwiftUI",
             "card": {
                 "textColor": "#ffffff",
-                "backgroundColors": ["ffe600", "ff00fb"]
+                "backgroundColors": ["ffffff", "ffffff"]
             },
             "questions": [
                 {
