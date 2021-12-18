@@ -40,9 +40,9 @@ private struct ContentTO: Decodable {
 }
 private struct QuestionTO: Decodable {
     var text: String
-    var correctAnswer: String
+    var answer: String
     var category: String
-    var photoName: String?
+    var complexity: String
 }
 
 // MARK: - Mapping
@@ -53,9 +53,7 @@ extension PersistenceController {
     private static func map(from object: QuestionTO, in context: NSManagedObjectContext) -> Question {
         let question = Question(context: context)
         question.text = object.text
-        question.correctAnswer = object.correctAnswer
         question.category = object.category
-        question.photoName = object.photoName
         return question
     }
 }

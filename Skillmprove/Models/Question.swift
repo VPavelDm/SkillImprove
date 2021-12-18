@@ -13,10 +13,6 @@ extension Question {
         get { text_! }
         set { text_ = newValue }
     }
-    var correctAnswer: String {
-        get { correctAnswer_! }
-        set { correctAnswer_ = newValue }
-    }
     var category: String {
         get { category_! }
         set { category_ = newValue }
