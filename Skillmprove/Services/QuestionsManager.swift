@@ -23,4 +23,8 @@ class QuestionsManager {
         let fetchRequest = Question.fetchRequest(.all)
         return try context.fetch(fetchRequest).map { $0.category }.unique()
     }
+    func markQuestionAsShown(question: Question) throws {
+        question.isShown = true
+        try context.save()
+    }
 }

@@ -32,6 +32,11 @@ class QuizGame: ObservableObject {
         }
     }
     func removeQuestion() {
-        questions.removeLast()
+        let question = questions.removeLast()
+        do {
+            try repository.markQuestionAsShown(question: question)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
