@@ -11,10 +11,12 @@ struct QuizGameFiltersView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding var search: QuizGameSearch
     @State private var draft: QuizGameSearch
+    private let onApply: () -> Void
     
-    init(search: Binding<QuizGameSearch>) {
+    init(search: Binding<QuizGameSearch>, onApply: @escaping () -> Void) {
         self._search = search
         self._draft = State(wrappedValue: search.wrappedValue)
+        self.onApply = onApply
     }
     
     var body: some View {
@@ -36,13 +38,12 @@ struct QuizGameFiltersView: View {
     var content: some View {
         VStack {
             VStack {
-                Toggle("iOS", isOn: $draft.iOS)
-                Divider()
-                Toggle("UIKit", isOn: $draft.uiKit)
-                Divider()
-                Toggle("SwiftUI", isOn: $draft.swiftUI)
-                Divider()
-                Toggle("Obj-C", isOn: $draft.objC)
+                ForEach(draft.filters.indices, id: \.self) { index in
+                    Toggle(draft.filters[index], isOn: $draft.toggles[index])
+                    if index < draft.filters.count {
+                        Divider()
+                    }
+                }
             }
             .foregroundColor(.white)
             .font(.system(size: 18, weight: .semibold))
@@ -62,6 +63,7 @@ struct QuizGameFiltersView: View {
     var apply: some View {
         Button {
             search = draft
+            onApply()
             presentationMode.wrappedValue.dismiss()
         } label: {
             Text("Apply")
@@ -72,7 +74,7 @@ struct QuizGameFiltersView: View {
 struct QuizGameFiltersView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            QuizGameFiltersView(search: .constant(QuizGameSearch()))
+            QuizGameFiltersView(search: .constant(QuizGameSearch()), onApply: {})
         }
         .preferredColorScheme(.dark)
     }

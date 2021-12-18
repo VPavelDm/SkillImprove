@@ -9,31 +9,25 @@ import Foundation
 import CoreData
 
 struct QuizGameSearch: Equatable {
-    var iOS: Bool = true
-    var uiKit: Bool = false
-    var swiftUI: Bool = false
-    var objC: Bool = false
+    private(set) var filters: [String]
+    var toggles: [Bool]
+    
+    init(_ filters: [String] = []) {
+        self.filters = filters
+        self.toggles = Array(repeating: true, count: filters.count)
+    }
     
     var predicate: NSPredicate {
         var formatComponents: [String] = []
         var args: [Any] = []
-        if iOS {
-            formatComponents.append("category_ CONTAINS %@")
-            args.append("iOS")
-        }
-        if uiKit {
-            formatComponents.append("category_ CONTAINS %@")
-            args.append("UIKit")
-        }
-        if swiftUI {
-            formatComponents.append("category_ CONTAINS %@")
-            args.append("SwiftUI")
-        }
-        if objC {
-            formatComponents.append("category_ CONTAINS %@")
-            args.append("Objective-C")
+        
+        for (index, toggle) in toggles.enumerated() {
+            if toggle {
+                formatComponents.append("category_ CONTAINS %@")
+                args.append(filters[index])
+            }
         }
         let format = formatComponents.joined(separator: " or ")
-        return format.isEmpty ? .all : NSPredicate(format: format, argumentArray: args)
+        return format.isEmpty ? .none : NSPredicate(format: format, argumentArray: args)
     }
 }

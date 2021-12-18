@@ -11,13 +11,20 @@ import CoreData
 class QuizGame: ObservableObject {
     private let repository: QuestionsManager
     @Published private(set) var questions: [Question] = []
+    var search: QuizGameSearch
     
+    // MARK: - Inits
     init(context: NSManagedObjectContext) {
         repository = QuestionsManager(context: context)
+        
+        let filters = (try? repository.loadFilters()) ?? []
+        search = QuizGameSearch(filters)
+        
+        loadQuestions()
     }
         
     // MARK: - Intents
-    func loadQuestions(search: QuizGameSearch) {
+    func loadQuestions() {
         do {
             questions = try repository.loadQuestions(search: search)
         } catch {

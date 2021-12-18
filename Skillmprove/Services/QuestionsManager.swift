@@ -19,4 +19,8 @@ class QuestionsManager {
         let fetchRequest = Question.fetchRequest(search.predicate)
         return try context.fetch(fetchRequest)
     }
+    func loadFilters() throws -> [String] {
+        let fetchRequest = Question.fetchRequest(.all)
+        return try context.fetch(fetchRequest).map { $0.category }.unique()
+    }
 }

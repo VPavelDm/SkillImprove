@@ -10,12 +10,10 @@ import CoreData
 
 struct QuizGameView: View {
     @State private var shouldShowFilters = false
-    @State var search: QuizGameSearch
     @StateObject private var game: QuizGame
     
-    init(context: NSManagedObjectContext, search: QuizGameSearch) {
+    init(context: NSManagedObjectContext) {
         _game = StateObject(wrappedValue: QuizGame(context: context))
-        _search = State(initialValue: search)
     }
     
     var body: some View {
@@ -37,13 +35,9 @@ struct QuizGameView: View {
                     }
                 }
                 .sheet(isPresented: $shouldShowFilters) {
-                    QuizGameFiltersView(search: $search)
-                }
-                .onChange(of: search) { newSearch in
-                    game.loadQuestions(search: newSearch)
-                }
-                .onAppear {
-                    game.loadQuestions(search: search)
+                    QuizGameFiltersView(search: $game.search) {
+                        game.loadQuestions()
+                    }
                 }
         }
     }
@@ -70,7 +64,6 @@ struct QuizGameView: View {
 
 struct QuizGameView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizGameView(context: PersistenceController.preview.mainContext,
-                     search: QuizGameSearch())
+        QuizGameView(context: PersistenceController.preview.mainContext)
     }
 }
