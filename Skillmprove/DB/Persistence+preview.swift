@@ -54,6 +54,7 @@ extension PersistenceController {
         let question = Question(context: context)
         question.text = object.text
         question.category = object.category
+        question.answer_ = object.answer
         return question
     }
 }

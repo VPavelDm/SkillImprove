@@ -44,31 +44,26 @@ struct QuizGameView: View {
     private var content: some View {
         VStack {
             DeckView(cards: game.questions) { question in
-                VStack {
-                    Spacer(minLength: 0)
-                    Text(question.text)
-                        .foregroundColor(.black)
-                        .padding()
-                    ForEach(0..<3, id: \.self) { _ in
-                        Spacer(minLength: 0)
-                    }
-                }
+                card(with: question.text)
                 .cardify {
-                    VStack {
-                        Spacer(minLength: 0)
-                        Text("Answer")
-                            .foregroundColor(.black)
-                            .padding()
-                        ForEach(0..<3, id: \.self) { _ in
-                            Spacer(minLength: 0)
-                        }
-                    }
+                    card(with: question.answer)
                 } onRemove: {
                     game.removeQuestion()
                 }
             }
             .padding()
             Spacer()
+        }
+    }
+    private func card(with text: String) -> some View {
+        VStack {
+            Spacer(minLength: 0)
+            Text(text)
+                .foregroundColor(.black)
+                .padding()
+            ForEach(0..<3, id: \.self) { _ in
+                Spacer(minLength: 0)
+            }
         }
     }
 }
