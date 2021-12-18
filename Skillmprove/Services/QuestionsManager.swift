@@ -9,9 +9,14 @@ import Foundation
 import CoreData
 
 class QuestionsManager {
+    private var context: NSManagedObjectContext
+    
+    init(context: NSManagedObjectContext) {
+        self.context = context
+    }
+    
     func loadQuestions(search: QuizGameSearch) throws -> [Question] {
         let fetchRequest = Question.fetchRequest(search.predicate)
-        let context = PersistenceController.shared.mainContext
         return try context.fetch(fetchRequest)
     }
 }

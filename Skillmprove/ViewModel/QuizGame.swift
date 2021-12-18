@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import CoreData
 
 class QuizGame: ObservableObject {
-    private let repository = QuestionsManager()
+    private let repository: QuestionsManager
     @Published private(set) var questions: [Question] = []
+    
+    init(context: NSManagedObjectContext) {
+        repository = QuestionsManager(context: context)
+    }
         
     // MARK: - Intents
     func loadQuestions(search: QuizGameSearch) {

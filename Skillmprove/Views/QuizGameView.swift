@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct QuizGameView: View {
     @State private var shouldShowFilters = false
     @State var search: QuizGameSearch
-    @StateObject private var game = QuizGame()
+    @StateObject private var game: QuizGame
+    
+    init(context: NSManagedObjectContext, search: QuizGameSearch) {
+        _game = StateObject(wrappedValue: QuizGame(context: context))
+        _search = State(initialValue: search)
+    }
     
     var body: some View {
         NavigationView {
@@ -58,6 +64,7 @@ struct QuizGameView: View {
 
 struct QuizGameView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizGameView(search: QuizGameSearch())
+        QuizGameView(context: PersistenceController.preview.mainContext,
+                     search: QuizGameSearch())
     }
 }

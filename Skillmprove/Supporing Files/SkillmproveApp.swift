@@ -11,8 +11,8 @@ import SwiftUI
 struct SkillmproveApp: App {
     var body: some Scene {
         WindowGroup {
-            QuizGameView(search: QuizGameSearch())
-                .environment(\.managedObjectContext, PersistenceController.shared.mainContext)
+            #warning("Make main context")
+            QuizGameView(context: PersistenceController.preview.mainContext, search: QuizGameSearch())
                 .preferredColorScheme(.dark)
                 .onAppear {
                     UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
