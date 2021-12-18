@@ -54,6 +54,16 @@ struct QuizGameView: View {
                     }
                 }
                 .cardify {
+                    VStack {
+                        Spacer(minLength: 0)
+                        Text("Answer")
+                            .foregroundColor(.black)
+                            .padding()
+                        ForEach(0..<3, id: \.self) { _ in
+                            Spacer(minLength: 0)
+                        }
+                    }
+                } onRemove: {
                     game.removeQuestion()
                 }
             }

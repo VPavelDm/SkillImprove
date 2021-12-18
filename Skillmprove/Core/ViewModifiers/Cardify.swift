@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct Cardify: ViewModifier {
+struct Cardify<ReverseContent>: ViewModifier where ReverseContent: View {
     @State private var dragCardOffset: CGSize = .zero
     @State private var isFaceUp = true
     var onRemove: () -> Void
+    var reverseContent: () -> ReverseContent
     
     // MARK: - Inits
-    init(onRemove: @escaping () -> Void) {
+    init(onRemove: @escaping () -> Void, reverseContent: @escaping () -> ReverseContent) {
         self.onRemove = onRemove
+        self.reverseContent = reverseContent
     }
 
     // MARK: - Views
@@ -25,16 +27,27 @@ struct Cardify: ViewModifier {
                 .offset(x: dragCardOffset.width, y: dragCardOffset.height)
                 .gesture(dragGesture(in: geometry.size))
         }
-        .aspectRatio(3/4, contentMode: .fit)
         .transition(removeTransition)
-        .cardRotation(isFaceUp: isFaceUp)
+        .rotatable(isFaceUp: isFaceUp) {
+            card(content: reverseContent())
+        }
+        .aspectRatio(3/4, contentMode: .fit)
         .onTapGesture {
-            withAnimation {
+            withAnimation(.linear(duration: 0.5)) {
                 isFaceUp.toggle()
             }
         }
     }
     func card(content: Content) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 16)
+                .fill()
+                .foregroundColor(.white)
+                .shadow(radius: 5)
+            content
+        }
+    }
+    func card(content: ReverseContent) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 16)
                 .fill()
@@ -75,7 +88,10 @@ struct Cardify: ViewModifier {
 }
 
 extension View {
-    func cardify(onRemove: @escaping () -> Void) -> some View {
-        modifier(Cardify(onRemove: onRemove))
+    func cardify<ReverseContent>(
+        reverseContent: @escaping () -> ReverseContent,
+        onRemove: @escaping () -> Void
+    ) -> some View where ReverseContent: View {
+        modifier(Cardify(onRemove: onRemove, reverseContent: reverseContent))
     }
 }
