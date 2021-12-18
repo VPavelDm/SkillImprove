@@ -55,6 +55,7 @@ extension PersistenceController {
         question.text = object.text
         question.category = object.category
         question.answer_ = object.answer
+        question.isShown = false
         return question
     }
 }

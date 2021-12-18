@@ -27,7 +27,8 @@ struct QuizGameSearch: Equatable {
                 args.append(filters[index])
             }
         }
-        let format = formatComponents.joined(separator: " or ")
+        let format = "isShown == %@ and (" + formatComponents.joined(separator: " or ") + ")"
+        args.insert(false, at: 0)
         return format.isEmpty ? .none : NSPredicate(format: format, argumentArray: args)
     }
 }
