@@ -22,15 +22,12 @@ struct Cardify<ReverseContent>: ViewModifier where ReverseContent: View {
     // MARK: - Views
     func body(content: Content) -> some View {
         GeometryReader { geometry in
-            card(content: content)
-                .rotationEffect(.degrees(dragCardOffset.width / 20), anchor: .bottom)
-                .offset(x: dragCardOffset.width, y: dragCardOffset.height)
-                .gesture(dragGesture(in: geometry.size))
+            card(content: content, in: geometry.size)
+                .rotatable(isFaceUp: isFaceUp) {
+                    card(content: reverseContent(), in: geometry.size)
+                }
         }
         .transition(removeTransition)
-        .rotatable(isFaceUp: isFaceUp) {
-            card(content: reverseContent())
-        }
         .aspectRatio(3/4, contentMode: .fit)
         .onTapGesture {
             withAnimation(.linear(duration: 0.5)) {
@@ -38,23 +35,33 @@ struct Cardify<ReverseContent>: ViewModifier where ReverseContent: View {
             }
         }
     }
-    func card(content: Content) -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 16)
-                .fill()
-                .foregroundColor(.white)
-                .shadow(radius: 5)
-            content
+    func card(content: Content, in size: CGSize) -> some View {
+        applyDraggableGesture(in: size) {
+            ZStack {
+                cardBackground
+                content
+            }
         }
     }
-    func card(content: ReverseContent) -> some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 16)
-                .fill()
-                .foregroundColor(.white)
-                .shadow(radius: 5)
-            content
+    func card(content: ReverseContent, in size: CGSize) -> some View {
+        applyDraggableGesture(in: size) {
+            ZStack {
+                cardBackground
+                content
+            }
         }
+    }
+    var cardBackground: some View {
+        RoundedRectangle(cornerRadius: 16)
+            .fill()
+            .foregroundColor(.white)
+            .shadow(radius: 5)
+    }
+    func applyDraggableGesture<DraggableContent>(in size: CGSize, content: () -> DraggableContent) -> some View where DraggableContent: View {
+        content()
+            .rotationEffect(.degrees(dragCardOffset.width / 20), anchor: .bottom)
+            .offset(x: dragCardOffset.width, y: dragCardOffset.height)
+            .gesture(dragGesture(in: size))
     }
     
     // MARK: - Gestures
