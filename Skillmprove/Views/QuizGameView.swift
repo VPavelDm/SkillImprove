@@ -43,9 +43,7 @@ struct QuizGameView: View {
     }
     private var content: some View {
         VStack {
-            DeckView(cards: game.questions) {
-                game.removeQuestion()
-            } content: { question in
+            DeckView(cards: game.questions) { question in
                 VStack {
                     Spacer(minLength: 0)
                     Text(question.text)
@@ -55,9 +53,12 @@ struct QuizGameView: View {
                         Spacer(minLength: 0)
                     }
                 }
-                .cardify()
+                .cardify {
+                    game.removeQuestion()
+                }
             }
             .padding()
+            Spacer()
         }
     }
 }
