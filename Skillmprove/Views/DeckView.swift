@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DeckView<Card, Item>: View where Card: View {
+    @State private var isTopCardFacedUp = true
     @State private var topCardOffset: CGSize = .zero
     @State private var draggableCardIndex: Int?
     var cards: [Item]
@@ -33,6 +34,7 @@ struct DeckView<Card, Item>: View where Card: View {
                                     topCardOffset = value.translation
                                 }
                                 .onEnded { value in
+                                    isTopCardFacedUp = true
                                     withAnimation {
                                         if abs(gesturePercentage(geometry, from: value)) > thresholdPercentage {
                                             onRemove()
@@ -43,6 +45,12 @@ struct DeckView<Card, Item>: View where Card: View {
                                 }
                         )
                         .transition(removeTransition)
+                        .cardRotation(isFaceUp: isTopCardFacedUp && index == cards.count - 1)
+                        .onTapGesture {
+                            withAnimation {
+                                isTopCardFacedUp.toggle()
+                            }
+                        }
                 }
             }
         }
