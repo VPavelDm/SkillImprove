@@ -54,6 +54,7 @@ struct QuizGameView: View {
             .padding()
             Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     private func card(with text: String) -> some View {
         VStack {
