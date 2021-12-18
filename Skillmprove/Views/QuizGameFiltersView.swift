@@ -34,12 +34,23 @@ struct QuizGameFiltersView: View {
         }
     }
     var content: some View {
-        Form {
-            Toggle("iOS", isOn: $draft.iOS)
-            Toggle("UIKit", isOn: $draft.uiKit)
-            Toggle("SwiftUI", isOn: $draft.swiftUI)
-            Toggle("Obj-C", isOn: $draft.objC)
+        VStack {
+            VStack {
+                Toggle("iOS", isOn: $draft.iOS)
+                Divider()
+                Toggle("UIKit", isOn: $draft.uiKit)
+                Divider()
+                Toggle("SwiftUI", isOn: $draft.swiftUI)
+                Divider()
+                Toggle("Obj-C", isOn: $draft.objC)
+            }
+            .foregroundColor(.white)
+            .font(.system(size: 18, weight: .semibold))
+            .padding()
+            .cornerRadius(16)
+            Spacer()
         }
+        .padding()
     }
     var cancel: some View {
         Button {
