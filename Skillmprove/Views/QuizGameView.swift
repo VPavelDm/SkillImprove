@@ -53,19 +53,17 @@ struct QuizGameView: View {
                 game.removeQuestion()
             } content: { question in
                 VStack {
-                    if let photoName = question.photoName {
-                        Image(photoName)
-                            .resizable()
-                            .aspectRatio(1.0, contentMode: .fit)
-                    }
+                    Spacer(minLength: 0)
                     Text(question.text)
                         .foregroundColor(.black)
-                    Spacer()
+                        .padding()
+                    ForEach(0..<3, id: \.self) { _ in
+                        Spacer(minLength: 0)
+                    }
                 }
                 .cardify()
             }
             .padding()
-            Spacer()
         }
     }
 }

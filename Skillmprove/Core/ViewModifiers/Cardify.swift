@@ -14,10 +14,10 @@ struct Cardify: ViewModifier {
             RoundedRectangle(cornerRadius: 16)
                 .fill()
                 .foregroundColor(.white)
+                .shadow(radius: 5)
             content
         }
-        .aspectRatio(1.0, contentMode: .fit)
-        .shadow(radius: 5)
+        .aspectRatio(3/4, contentMode: .fit)
     }
 }
 
