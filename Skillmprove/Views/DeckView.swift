@@ -12,7 +12,7 @@ struct DeckView<Card, Item>: View where Card: View {
     @State private var draggableCardIndex: Int?
     var cards: [Item]
     var onRemove: () -> Void
-    var content: (Item) -> Card
+    @ViewBuilder var content: (Item) -> Card
     
     // MARK: - Views
     var body: some View {

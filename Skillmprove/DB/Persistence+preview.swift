@@ -42,6 +42,7 @@ private struct QuestionTO: Decodable {
     var text: String
     var correctAnswer: String
     var category: String
+    var photoName: String?
 }
 
 // MARK: - Mapping
@@ -53,7 +54,8 @@ extension PersistenceController {
         let question = Question(context: context)
         question.text = object.text
         question.correctAnswer = object.correctAnswer
-        question.category_ = object.category
+        question.category = object.category
+        question.photoName = object.photoName
         return question
     }
 }

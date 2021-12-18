@@ -52,9 +52,17 @@ struct QuizGameView: View {
             DeckView(cards: game.questions) {
                 game.removeQuestion()
             } content: { question in
-                Text(question.text)
-                    .foregroundColor(.black)
-                    .cardify()
+                VStack {
+                    if let photoName = question.photoName {
+                        Image(photoName)
+                            .resizable()
+                            .aspectRatio(1.0, contentMode: .fit)
+                    }
+                    Text(question.text)
+                        .foregroundColor(.black)
+                    Spacer()
+                }
+                .cardify()
             }
             .padding()
             Spacer()

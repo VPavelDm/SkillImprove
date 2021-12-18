@@ -17,6 +17,10 @@ extension Question {
         get { correctAnswer_! }
         set { correctAnswer_ = newValue }
     }
+    var category: String {
+        get { category_! }
+        set { category_ = newValue }
+    }
     
     // MARK: - Requests
     static func fetchRequest(_ predicate: NSPredicate) -> NSFetchRequest<Question> {
