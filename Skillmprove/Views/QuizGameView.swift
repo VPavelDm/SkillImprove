@@ -15,6 +15,7 @@ struct QuizGameView: View {
     var body: some View {
         NavigationView {
             content
+                .padding(.top)
                 .background(
                     LinearGradient(colors: [.purple, .cyan], startPoint: .top, endPoint: .bottom)
                 )
