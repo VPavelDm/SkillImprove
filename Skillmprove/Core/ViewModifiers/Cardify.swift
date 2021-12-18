@@ -9,8 +9,10 @@ import SwiftUI
 
 struct Cardify: ViewModifier {
     @State private var dragCardOffset: CGSize = .zero
+    @State private var isFaceUp = true
     var onRemove: () -> Void
     
+    // MARK: - Inits
     init(onRemove: @escaping () -> Void) {
         self.onRemove = onRemove
     }
@@ -25,6 +27,12 @@ struct Cardify: ViewModifier {
         }
         .aspectRatio(3/4, contentMode: .fit)
         .transition(removeTransition)
+        .cardRotation(isFaceUp: isFaceUp)
+        .onTapGesture {
+            withAnimation {
+                isFaceUp.toggle()
+            }
+        }
     }
     func card(content: Content) -> some View {
         ZStack {
