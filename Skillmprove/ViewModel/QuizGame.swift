@@ -39,4 +39,12 @@ class QuizGame: ObservableObject {
             print(error.localizedDescription)
         }
     }
+    func toggleLikeStatusOfQuestion() {
+        do {
+            try repository.toggleLikeStatusOfQuestion(question: questions.last!)
+            objectWillChange.send()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }

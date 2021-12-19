@@ -27,4 +27,8 @@ class QuestionsManager {
         question.isShown = true
         try context.save()
     }
+    func toggleLikeStatusOfQuestion(question: Question) throws {
+        question.isLiked.toggle()
+        try context.save()
+    }
 }

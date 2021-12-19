@@ -45,13 +45,14 @@ struct QuizGameView: View {
         VStack {
             DeckView(cards: game.questions) { question in
                 card(with: question.text)
-                .cardify {
-                    card(with: question.answer)
-                } onRemove: {
-                    game.removeQuestion()
-                }
+                    .cardify {
+                        card(with: question.answer)
+                    } onRemove: {
+                        game.removeQuestion()
+                    }
             }
             .padding()
+            actionsPanel
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -66,6 +67,41 @@ struct QuizGameView: View {
                 Spacer(minLength: 0)
             }
         }
+    }
+    private var actionsPanel: some View {
+        HStack(spacing: 20) {
+            likeButton
+        }
+    }
+    private var likeButton: some View {
+        Button {
+            withAnimation {
+                game.toggleLikeStatusOfQuestion()
+            }
+        } label: {
+            ZStack {
+                if game.questions.last?.isLiked ?? false {
+                    Group {
+                        Circle().foregroundColor(Color(hex: "34c759"))
+                        heartIcon
+                    }
+                    .transition(.scale)
+                } else {
+                    Group {
+                        Circle().foregroundColor(.red)
+                        heartIcon
+                    }
+                    .transition(.scale)
+                }
+            }
+            .frame(width: 44, height: 44)
+        }
+    }
+    private var heartIcon: some View {
+        Image(systemName: "suit.heart.fill")
+            .resizable()
+            .frame(width: 22, height: 20)
+            .padding(.top, 2)
     }
 }
 
