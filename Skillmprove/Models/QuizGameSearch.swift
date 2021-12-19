@@ -28,9 +28,14 @@ struct QuizGameSearch: Equatable {
                 args.append(filters[index])
             }
         }
-        let format = "isLiked == %@ and isShown == %@ and (" + formatComponents.joined(separator: " or ") + ")"
-        args.insert(false, at: 0)
-        args.insert(onlyFavorites, at: 0)
+        let format: String
+        if onlyFavorites {
+            format = "isLiked == %@ and (" + formatComponents.joined(separator: " or ") + ")"
+            args.insert(onlyFavorites, at: 0)
+        } else {
+            format = "isShown == %@ and (" + formatComponents.joined(separator: " or ") + ")"
+            args.insert(false, at: 0)
+        }
         return format.isEmpty ? .none : NSPredicate(format: format, argumentArray: args)
     }
 }
