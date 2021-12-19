@@ -56,6 +56,7 @@ extension PersistenceController {
         question.category = object.category
         question.answer_ = object.answer
         question.isShown = false
+        question.isLiked = false
         return question
     }
 }

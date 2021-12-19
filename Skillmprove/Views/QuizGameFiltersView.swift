@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct QuizGameFiltersView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -36,21 +37,22 @@ struct QuizGameFiltersView: View {
         }
     }
     var content: some View {
-        VStack {
-            VStack {
+        Form {
+            Section {
+                Toggle("Only favorites", isOn: $draft.onlyFavorites)
+            }
+            .listRowBackground(Color.black.opacity(0.3))
+            Section {
                 ForEach(draft.filters.indices, id: \.self) { index in
                     Toggle(draft.filters[index], isOn: $draft.toggles[index])
-                    if index < draft.filters.count {
-                        Divider()
-                    }
                 }
             }
-            .foregroundColor(.white)
-            .font(.system(size: 18, weight: .semibold))
-            .padding()
-            .cornerRadius(16)
-            Spacer()
+            .listRowBackground(Color.black.opacity(0.3))
         }
+        .introspectTableView { tableView in
+            tableView.backgroundColor = .clear
+        }
+        .font(.system(size: 18, weight: .semibold))
         .padding()
     }
     var cancel: some View {

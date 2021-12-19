@@ -68,9 +68,13 @@ struct QuizGameView: View {
             }
         }
     }
+    @ViewBuilder
     private var actionsPanel: some View {
-        HStack(spacing: 20) {
-            likeButton
+        if !game.questions.isEmpty {
+            HStack(spacing: 20) {
+                likeButton
+            }
+            .transition(.scale)
         }
     }
     private var likeButton: some View {

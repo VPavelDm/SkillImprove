@@ -11,6 +11,7 @@ import CoreData
 struct QuizGameSearch: Equatable {
     private(set) var filters: [String]
     var toggles: [Bool]
+    var onlyFavorites: Bool = false
     
     init(_ filters: [String] = []) {
         self.filters = filters
@@ -27,8 +28,9 @@ struct QuizGameSearch: Equatable {
                 args.append(filters[index])
             }
         }
-        let format = "isShown == %@ and (" + formatComponents.joined(separator: " or ") + ")"
+        let format = "isLiked == %@ and isShown == %@ and (" + formatComponents.joined(separator: " or ") + ")"
         args.insert(false, at: 0)
+        args.insert(onlyFavorites, at: 0)
         return format.isEmpty ? .none : NSPredicate(format: format, argumentArray: args)
     }
 }
