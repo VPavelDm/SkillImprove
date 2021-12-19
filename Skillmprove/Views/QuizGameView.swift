@@ -50,6 +50,7 @@ struct QuizGameView: View {
                     } onRemove: {
                         game.removeQuestion()
                     }
+                    .disabled(game.questions.last != question)
             }
             .padding()
             actionsPanel
