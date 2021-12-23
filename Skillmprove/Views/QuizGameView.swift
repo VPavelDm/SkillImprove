@@ -47,7 +47,8 @@ struct QuizGameView: View {
                 card(with: question.text)
                     .cardify {
                         card(with: question.answer)
-                    } onRemove: {
+                    }
+                    .dragToRemove {
                         game.removeQuestion()
                     }
                     .disabled(game.questions.last != question)
