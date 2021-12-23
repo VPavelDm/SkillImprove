@@ -227,10 +227,10 @@
 		4ADB72C12769DC150091CAD1 /* ViewModifiers */ = {
 			isa = PBXGroup;
 			children = (
+				4AF38622276BA30E003E376A /* PopupView */,
 				4A9D63BB2774D4F400317E4C /* DragToRemove.swift */,
 				4ADB72C22769DC1F0091CAD1 /* NavigationBarTransparancy.swift */,
 				4A24A720276A4CC90068BFB7 /* Cardify.swift */,
-				4AF38622276BA30E003E376A /* PopupView */,
 				4A3980D0276DFB8F0099FEA1 /* CardRotation.swift */,
 			);
 			path = ViewModifiers;
