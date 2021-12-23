@@ -7,19 +7,24 @@
 
 import SwiftUI
 
-struct DeckView<Card, Item>: View where Card: View {
+struct DeckView<Card, EmptyView, Item>: View where Card: View, EmptyView: View {
     var cards: [Item]
     @ViewBuilder var content: (Item) -> Card
+    @ViewBuilder var empty: () -> EmptyView
     
     // MARK: - Views
     var body: some View {
         ZStack {
-            ForEach(cards.indices, id: \.self) { index in
-                content(cards[index])
-                    .zIndex(Double(index))
-                    .opacity(isCardVisible(at: index) ? 1 : 0)
-                    .offset(x: 0, y: offset(at: index))
-                    .scaleEffect(scale(at: index))
+            if cards.isEmpty {
+                empty()
+            } else {
+                ForEach(cards.indices, id: \.self) { index in
+                    content(cards[index])
+                        .zIndex(Double(index))
+                        .opacity(isCardVisible(at: index) ? 1 : 0)
+                        .offset(x: 0, y: offset(at: index))
+                        .scaleEffect(scale(at: index))
+                }
             }
         }
     }
@@ -57,6 +62,8 @@ struct DeckView_Previews: PreviewProvider {
                         .background(Color.white)
                         .cornerRadius(16)
                         .shadow(radius: 5)
+                } empty: {
+                    Text("Empty")
                 }
                 .padding()
             }
