@@ -5,9 +5,10 @@
         <attribute name="category_" optional="YES" attributeType="String"/>
         <attribute name="isLiked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isShown" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="level_" optional="YES" attributeType="String"/>
         <attribute name="text_" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Question" positionX="-45" positionY="27" width="128" height="104"/>
+        <element name="Question" positionX="-45" positionY="27" width="128" height="119"/>
     </elements>
 </model>

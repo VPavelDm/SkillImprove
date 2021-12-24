@@ -57,6 +57,7 @@ extension PersistenceController {
         question.answer_ = object.answer
         question.isShown = false
         question.isLiked = false
+        question.level_ = object.complexity
         return question
     }
 }

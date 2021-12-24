@@ -12,30 +12,61 @@ struct QuizGameSearch: Equatable {
     private(set) var filters: [String]
     var toggles: [Bool]
     var onlyFavorites: Bool = false
+    var easy: Bool = true
+    var middle: Bool = true
+    var hard: Bool = true
     
+    // MARK: - Inits
     init(_ filters: [String] = []) {
         self.filters = filters
         self.toggles = Array(repeating: true, count: filters.count)
     }
     
+    // MARK: - Predicate Utils
     var predicate: NSPredicate {
+        guard let categoryFormat = categoryFormat else { return .none }
+        guard let levelFormat = levelFormat else { return .none }
+        let components = [favoriteFormat, categoryFormat, levelFormat]
+        let format = components
+            .map { $0.format }
+            .joined(separator: " and ")
+        let args = components
+            .flatMap { $0.args}
+        return NSPredicate(format: format, argumentArray: args)
+    }
+    private var favoriteFormat: (format: String, args: [Any]) {
+        if onlyFavorites {
+            return ("(isLiked == %@)", [onlyFavorites])
+        } else {
+            return ("(isShown == %@)", [false])
+        }
+    }
+    private var categoryFormat: (format: String, args: [Any])? {
         var formatComponents: [String] = []
         var args: [Any] = []
-        
         for (index, toggle) in toggles.enumerated() {
             if toggle {
                 formatComponents.append("category_ CONTAINS %@")
                 args.append(filters[index])
             }
         }
-        let format: String
-        if onlyFavorites {
-            format = "isLiked == %@ and (" + formatComponents.joined(separator: " or ") + ")"
-            args.insert(onlyFavorites, at: 0)
-        } else {
-            format = "isShown == %@ and (" + formatComponents.joined(separator: " or ") + ")"
-            args.insert(false, at: 0)
+        return formatComponents.isEmpty ? nil : ("(\(formatComponents.joined(separator: " or ")))", args)
+    }
+    private var levelFormat: (format: String, args: [Any])? {
+        var formatComponents: [String] = []
+        var args: [String] = []
+        if easy {
+            formatComponents.append("level_ == %@")
+            args.append(Question.EASY)
         }
-        return format.isEmpty ? .none : NSPredicate(format: format, argumentArray: args)
+        if middle {
+            formatComponents.append("level_ == %@")
+            args.append(Question.MIDDLE)
+        }
+        if hard {
+            formatComponents.append("level_ == %@")
+            args.append(Question.HARD)
+        }
+        return formatComponents.isEmpty ? nil : ("(\(formatComponents.joined(separator: " or ")))", args)
     }
 }

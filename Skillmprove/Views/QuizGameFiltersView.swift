@@ -38,22 +38,37 @@ struct QuizGameFiltersView: View {
     }
     var content: some View {
         Form {
-            Section {
-                Toggle("Only favorites", isOn: $draft.onlyFavorites)
-            }
-            .listRowBackground(Color.black.opacity(0.3))
-            Section {
-                ForEach(draft.filters.indices, id: \.self) { index in
-                    Toggle(draft.filters[index], isOn: $draft.toggles[index])
-                }
-            }
-            .listRowBackground(Color.black.opacity(0.3))
+            onlyFavoritesSection
+            complexitySection
+            categoriesSection
         }
         .introspectTableView { tableView in
             tableView.backgroundColor = .clear
         }
         .font(.system(size: 18, weight: .semibold))
         .padding()
+    }
+    var onlyFavoritesSection: some View {
+        Section {
+            Toggle("Only favorites", isOn: $draft.onlyFavorites)
+        }
+        .listRowBackground(Color.black.opacity(0.3))
+    }
+    var complexitySection: some View {
+        Section {
+            Toggle("Easy questions", isOn: $draft.easy)
+            Toggle("Middle questions", isOn: $draft.middle)
+            Toggle("Hard questions", isOn: $draft.hard)
+        }
+        .listRowBackground(Color.black.opacity(0.3))
+    }
+    var categoriesSection: some View {
+        Section {
+            ForEach(draft.filters.indices, id: \.self) { index in
+                Toggle(draft.filters[index], isOn: $draft.toggles[index])
+            }
+        }
+        .listRowBackground(Color.black.opacity(0.3))
     }
     var cancel: some View {
         Button {

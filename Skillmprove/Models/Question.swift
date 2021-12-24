@@ -21,6 +21,10 @@ extension Question {
         get { answer_! }
         set { answer_ = newValue }
     }
+    var level: Level {
+        get { Level(value: level_!)! }
+        set { level_ = newValue.key }
+    }
     
     // MARK: - Requests
     static func fetchRequest(_ predicate: NSPredicate) -> NSFetchRequest<Question> {
