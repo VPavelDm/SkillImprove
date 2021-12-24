@@ -44,6 +44,9 @@ struct QuizGameView: View {
         .onAppear {
             initialCardsCount = game.questions.count
         }
+        .onChange(of: shouldShowFilters, perform: { _ in
+            initialCardsCount = game.questions.count
+        })
     }
     private var content: some View {
         GeometryReader { geometry in
