@@ -9,22 +9,22 @@ import SwiftUI
 
 struct DragToRemove: ViewModifier {
     @State private var dragCardOffset: CGSize = .zero
+    var size: CGSize
     var onRemove: () -> Void
     
     // MARK: - Inits
-    init(onRemove: @escaping () -> Void) {
+    init(size: CGSize, onRemove: @escaping () -> Void) {
+        self.size = size
         self.onRemove = onRemove
     }
 
     // MARK: - Views
     func body(content: Content) -> some View {
-        GeometryReader { geometry in
-            content
-                .rotationEffect(.degrees(dragCardOffset.width / 20), anchor: .bottom)
-                .offset(x: dragCardOffset.width, y: dragCardOffset.height)
-                .gesture(dragGesture(in: geometry.size))
-        }
-        .transition(removeTransition)
+        content
+            .rotationEffect(.degrees(dragCardOffset.width / 20), anchor: .bottom)
+            .offset(x: dragCardOffset.width, y: dragCardOffset.height)
+            .gesture(dragGesture(in: size))
+            .transition(removeTransition)
     }
     
     // MARK: - Gestures
@@ -58,7 +58,7 @@ struct DragToRemove: ViewModifier {
 }
 
 extension View {
-    func dragToRemove(onRemove: @escaping () -> Void) -> some View {
-        modifier(DragToRemove(onRemove: onRemove))
+    func dragToRemove(in size: CGSize, onRemove: @escaping () -> Void) -> some View {
+        modifier(DragToRemove(size: size, onRemove: onRemove))
     }
 }

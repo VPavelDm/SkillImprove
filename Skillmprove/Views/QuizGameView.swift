@@ -42,24 +42,28 @@ struct QuizGameView: View {
         }
     }
     private var content: some View {
-        VStack {
-            DeckView(cards: game.questions) { question in
-                card(with: question.text)
-                    .cardify {
-                        card(with: question.answer)
-                    }
-                    .dragToRemove {
-                        game.removeQuestion()
-                    }
-                    .disabled(game.questions.last != question)
-            } empty: {
-                EmptyQuestionsView()
+        GeometryReader { geometry in
+            VStack {
+                deck(in: geometry.size)
+                actionsPanel
+                Spacer()
             }
-            .padding()
-            actionsPanel
-            Spacer()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    private func deck(in size: CGSize) -> some View {
+        DeckView(cards: game.questions) { question in
+            card(with: question.text)
+                .cardify {
+                    card(with: question.answer)
+                }
+                .dragToRemove(in: size) {
+                    game.removeQuestion()
+                }
+                .disabled(game.questions.last != question)
+        } empty: {
+            EmptyQuestionsView()
+        }
+        .padding()
     }
     private func card(with text: String) -> some View {
         VStack {
