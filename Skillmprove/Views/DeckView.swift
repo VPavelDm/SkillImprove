@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DeckView<Card, EmptyView, Item>: View where Card: View, EmptyView: View {
     var cards: [Item]
-    @ViewBuilder var content: (Item) -> Card
+    @ViewBuilder var content: (Int) -> Card
     @ViewBuilder var empty: () -> EmptyView
     
     // MARK: - Views
@@ -19,7 +19,7 @@ struct DeckView<Card, EmptyView, Item>: View where Card: View, EmptyView: View {
                 empty()
             } else {
                 ForEach(cards.indices, id: \.self) { index in
-                    content(cards[index])
+                    content(index)
                         .zIndex(Double(index))
                         .opacity(isCardVisible(at: index) ? 1 : 0)
                         .offset(x: 0, y: offset(at: index))
@@ -55,8 +55,8 @@ struct DeckView_Previews: PreviewProvider {
         var body: some View {
             ZStack {
                 Color.red.ignoresSafeArea()
-                DeckView(cards: cards) { card in
-                    Text(card)
+                DeckView(cards: cards) { index in
+                    Text(cards[index])
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .aspectRatio(1.0, contentMode: .fit)
                         .background(Color.white)

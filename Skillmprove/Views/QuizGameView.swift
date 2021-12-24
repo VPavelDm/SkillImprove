@@ -11,6 +11,7 @@ import CoreData
 struct QuizGameView: View {
     @State private var shouldShowFilters = false
     @StateObject private var game: QuizGame
+    @State private var initialCardsCount = 0
     
     init(context: NSManagedObjectContext) {
         _game = StateObject(wrappedValue: QuizGame(context: context))
@@ -40,6 +41,9 @@ struct QuizGameView: View {
                     }
                 }
         }
+        .onAppear {
+            initialCardsCount = game.questions.count
+        }
     }
     private var content: some View {
         GeometryReader { geometry in
@@ -51,10 +55,11 @@ struct QuizGameView: View {
         }
     }
     private func deck(in size: CGSize) -> some View {
-        DeckView(cards: game.questions) { question in
-            card(with: question.text)
+        DeckView(cards: game.questions) { index in
+            let question = game.questions[index]
+            card(with: question.text, index: index)
                 .cardify {
-                    card(with: question.answer)
+                    card(with: question.answer, index: index)
                 }
                 .dragToRemove(in: size) {
                     game.removeQuestion()
@@ -65,8 +70,12 @@ struct QuizGameView: View {
         }
         .padding()
     }
-    private func card(with text: String) -> some View {
+    private func card(with text: String, index: Int) -> some View {
         VStack {
+            Text("\(initialCardsCount - index) of \(initialCardsCount)")
+                .font(.system(size: 14, weight: .regular))
+                .foregroundColor(.gray)
+                .padding(.top)
             Spacer(minLength: 0)
             Text(text)
                 .foregroundColor(.black)
