@@ -13,7 +13,7 @@ struct QuizGameSearch: Equatable {
     var toggles: [Bool]
     var onlyFavorites: Bool = false
     var easy: Bool = true
-    var middle: Bool = true
+    var medium: Bool = true
     var hard: Bool = true
     
     // MARK: - Inits
@@ -59,9 +59,9 @@ struct QuizGameSearch: Equatable {
             formatComponents.append("level_ == %@")
             args.append(Question.EASY)
         }
-        if middle {
+        if medium {
             formatComponents.append("level_ == %@")
-            args.append(Question.MIDDLE)
+            args.append(Question.MEDIUM)
         }
         if hard {
             formatComponents.append("level_ == %@")

@@ -9,16 +9,16 @@ import Foundation
 
 extension Question {
     static var EASY: String { "Easy" }
-    static var MIDDLE: String { "Middle" }
+    static var MEDIUM: String { "Medium" }
     static var HARD: String { "Hard" }
     
     enum Level {
-        case easy, middle, hard
+        case easy, medium, hard
         
         init?(value: String) {
             switch value {
             case Question.EASY: self = .easy
-            case Question.MIDDLE: self = .middle
+            case Question.MEDIUM: self = .medium
             case Question.HARD: self = .hard
             default: return nil
             }
@@ -28,8 +28,8 @@ extension Question {
             switch self {
             case .easy:
                 return Question.EASY
-            case .middle:
-                return Question.MIDDLE
+            case .medium:
+                return Question.MEDIUM
             case .hard:
                 return Question.HARD
             }

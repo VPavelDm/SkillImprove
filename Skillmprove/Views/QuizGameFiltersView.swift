@@ -57,7 +57,7 @@ struct QuizGameFiltersView: View {
     var complexitySection: some View {
         Section {
             Toggle("Easy questions", isOn: $draft.easy)
-            Toggle("Middle questions", isOn: $draft.middle)
+            Toggle("Medium questions", isOn: $draft.medium)
             Toggle("Hard questions", isOn: $draft.hard)
         }
         .listRowBackground(Color.black.opacity(0.3))
