@@ -45,7 +45,9 @@ struct QuizGameView: View {
             initialCardsCount = game.questions.count
         }
         .onChange(of: shouldShowFilters, perform: { _ in
-            initialCardsCount = game.questions.count
+            if initialCardsCount != game.questions.count {
+                initialCardsCount = game.questions.count
+            }
         })
     }
     private var content: some View {
