@@ -80,6 +80,7 @@ struct QuizGameFiltersView: View {
     var apply: some View {
         Button {
             search = draft
+            search.saveToggles()
             onApply()
             presentationMode.wrappedValue.dismiss()
         } label: {

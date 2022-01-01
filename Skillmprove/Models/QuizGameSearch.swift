@@ -19,7 +19,38 @@ struct QuizGameSearch: Equatable {
     // MARK: - Inits
     init(_ filters: [String] = []) {
         self.filters = filters
-        self.toggles = Array(repeating: true, count: filters.count)
+        self.toggles = []
+        setupToggles()
+    }
+    
+    // MARK: - DB
+    private mutating func setupToggles() {
+        
+        // favorites
+        UserDefaults.standard.register(defaults: [FAVORITES: true])
+        onlyFavorites = UserDefaults.standard.bool(forKey: FAVORITES)
+        
+        // complexity
+        let levels = [Question.EASY, Question.MEDIUM, Question.HARD]
+        UserDefaults.standard.register(defaults: Dictionary(uniqueKeysWithValues: levels.map({ ($0, true) })))
+        easy = UserDefaults.standard.bool(forKey: Question.EASY)
+        medium = UserDefaults.standard.bool(forKey: Question.MEDIUM)
+        hard = UserDefaults.standard.bool(forKey: Question.HARD)
+        
+        // categories
+        UserDefaults.standard.register(defaults: Dictionary(uniqueKeysWithValues: filters.map({ ($0, true) })))
+        for filter in filters {
+            toggles.append(UserDefaults.standard.bool(forKey: filter))
+        }
+    }
+    func saveToggles() {
+        for index in filters.indices {
+            UserDefaults.standard.set(toggles[index], forKey: filters[index])
+        }
+        UserDefaults.standard.set(easy, forKey: Question.EASY)
+        UserDefaults.standard.set(medium, forKey: Question.MEDIUM)
+        UserDefaults.standard.set(hard, forKey: Question.HARD)
+        UserDefaults.standard.set(onlyFavorites, forKey: FAVORITES)
     }
     
     // MARK: - Predicate Utils
@@ -69,4 +100,7 @@ struct QuizGameSearch: Equatable {
         }
         return formatComponents.isEmpty ? nil : ("(\(formatComponents.joined(separator: " or ")))", args)
     }
+    
+    // MARK: - Constants
+    private let FAVORITES = "favorites"
 }
