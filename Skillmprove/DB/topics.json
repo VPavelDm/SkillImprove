@@ -130,6 +130,16 @@
             "answer": "Phantom types are a type that doesn’t use at least one its generic parameters – they are declared with a generic parameter that isn’t used in their properties or methods.\nEven though we don’t use the generic type parameter, Swift does, which means it will treat two instances of our type as being incompatible if their generic type parameters are different. They aren’t used often, but when they are used they help the compiler enforce extra rules on our behalf – they make bad states impossible because the compiler will refuse to build our code.",
             "category": "Design patterns",
             "complexity": "Hard"
+        }, {
+            "text": "What is an array?",
+            "answer": "An array stores values of the same type in an ordered list. The same value can appear in an array multiple times at different positions. The type of a Swift array is written in full as Array<Element>, where Element is the type of values the array is allowed to store. You can also write the type of an array in shorthand form as [Element]. Although the two forms are functionally identical, the shorthand form is preferred.",
+            "category": "Collection Types",
+            "complexity": "Easy"
+        }, {
+            "text": "How to create an empty array?",
+            "answer": "There are three ways to create an empty array:\n1.\tvar someInts: [Int] = []\n2.\tvar someInts = Array<Int>()\n3.\tvar someInts = [Int]()",
+            "category": "Collection Types",
+            "complexity": "Easy"
         }
     ]
 }
